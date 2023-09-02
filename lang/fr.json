@@ -1,0 +1,8 @@
+{
+    "TYPES.Actor.chuchoteur": "Chuchoteur",
+    "TYPES.Actor.pnj": "PNJ",
+    "TYPES.Item.masque": "Masque",
+    "TYPES.Item.pouvoir": "Pouvoir",
+    "CARAVAN": {
+     }
+}

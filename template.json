@@ -1,0 +1,43 @@
+{
+    "Actor": {
+        "types": [
+            "chuchoteur",
+            "pnj"
+        ],
+        "chuchoteur": {
+            "surnom": "",
+            "age": 8,
+            "xp": 0,
+            "archetype": "",
+            "tic": "",
+            "phrase": "",
+            "mystique": 0,
+            "monstre": 0,
+            "sante": {
+                "enfant": 0,
+                "chuchoteur": 0
+            },
+            "traits": [],
+            "masques": []
+        },
+        "pnj": {
+            "type": "",
+            "action": 1,
+            "vie": 1,
+            "attaque": 1
+        }
+    },
+    "Item": {
+        "types": [
+            "masque",
+            "pouvoir"
+        ],
+        "masque": {
+            "description": "",
+            "trait": ""
+        },
+        "pouvoir": {
+            "description": ""
+        }
+    }
+}
