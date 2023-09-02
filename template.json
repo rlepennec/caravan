@@ -24,7 +24,8 @@
             "type": "",
             "action": 1,
             "vie": 1,
-            "attaque": 1
+            "attaque": 1,
+            "description": ""
         }
     },
     "Item": {
@@ -34,10 +35,47 @@
         ],
         "masque": {
             "description": "",
-            "trait": ""
+            "trait": "",
+            "voie.1": {
+                "nom": "",
+                "pouvoir.1": {
+                    "nom": "",
+                    "description": "",
+                    "duree": ""
+                },
+                "pouvoir.2": {
+                    "nom": "",
+                    "description": "",
+                    "duree": ""
+                },
+                "pouvoir.3": {
+                    "nom": "",
+                    "description": "",
+                    "duree": ""
+                }
+            },
+            "voie.2": {
+                "nom": "",
+                "pouvoir.1": {
+                    "nom": "",
+                    "description": "",
+                    "duree": ""
+                },
+                "pouvoir.2": {
+                    "nom": "",
+                    "description": "",
+                    "duree": ""
+                },
+                "pouvoir.3": {
+                    "nom": "",
+                    "description": "",
+                    "duree": ""
+                }
+            }
         },
         "pouvoir": {
-            "description": ""
+            "description": "",
+            "effet": ""
         }
     }
 }
