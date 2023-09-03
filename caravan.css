@@ -10,6 +10,7 @@
 .masque .header {
   display: flex;
   flex-direction: row;
+  height: 300px;
 }
 .masque .header img {
   width: 200px;
@@ -20,5 +21,5 @@
 }
 .masque .voie .pouvoir .nom {
   color: white;
-  background-color: black;
+  background-color: #423d3d;
 }
