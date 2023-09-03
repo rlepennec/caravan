@@ -4,6 +4,7 @@ import { ChuchoteurSheet } from "./module/actor/chuchoteur.js";
 import { MasqueSheet } from "./module/item/masque.js";
 import { PNJSheet } from "./module/actor/pnj.js";
 import { PouvoirSheet } from "./module/item/pouvoir.js";
+import { HandlebarsHelper } from "./module/core/handlebars.js";
 
 Hooks.once("init", function () {
     console.log("Caravan | Initializing Caravan System");
@@ -19,8 +20,9 @@ Hooks.once("init", function () {
     Items.registerSheet('caravan', MasqueSheet, { types: ['masque'], makeDefault: true });
     Items.registerSheet('caravan', PouvoirSheet, { types: ['pouvoir'], makeDefault: true });
 
-    loadTemplates([
-        
-    ]);
+    Handlebars.registerHelper({
+        html: HandlebarsHelper.html,
+        enrichHTML: HandlebarsHelper.enrichHTML
+    })
 
 });
