@@ -12,8 +12,17 @@
   flex-direction: row;
   height: 300px;
 }
-.masque .header img {
+.masque .header .image {
   width: 200px;
+  height: 300px;
+}
+.masque .header .description {
+  background-color: brown;
+  width: 100%;
+  height: 300px;
+}
+.masque .header .description .editor {
+  height: 100%;
 }
 .masque .voie .nom {
   color: white;
