@@ -40,36 +40,30 @@
                 "nom": "",
                 "pouvoir.1": {
                     "nom": "",
-                    "description": "",
-                    "duree": ""
+                    "description": ""
                 },
                 "pouvoir.2": {
                     "nom": "",
-                    "description": "",
-                    "duree": ""
+                    "description": ""
                 },
                 "pouvoir.3": {
                     "nom": "",
-                    "description": "",
-                    "duree": ""
+                    "description": ""
                 }
             },
             "voie.2": {
                 "nom": "",
                 "pouvoir.1": {
                     "nom": "",
-                    "description": "",
-                    "duree": ""
+                    "description": ""
                 },
                 "pouvoir.2": {
                     "nom": "",
-                    "description": "",
-                    "duree": ""
+                    "description": ""
                 },
                 "pouvoir.3": {
                     "nom": "",
-                    "description": "",
-                    "duree": ""
+                    "description": ""
                 }
             }
         },
