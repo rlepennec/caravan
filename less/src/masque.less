@@ -73,14 +73,43 @@
 
         .pouvoir {
 
-            .nom {
-                color: white;
-                background-color: black;
+            .titre {
+                display: flex;
+                flex-direction: row;
+                border: none;
+
+                label {
+                    color: white;
+                    background-color: black;
+                    padding-top: 4px;
+                    text-align: center;
+                    width: 30px;
+                    border: none;
+                    border-radius: 0px;
+                }
+
+                input {
+                    color: white;
+                    background-color: black;
+                    border: none;
+                    border-radius: 0px;
+                }
+
             }
 
-            .description {
-                height: 60px;
-                width: 100px;
+            span {
+                width: 100%;
+                padding: 1px 6px;
+            }
+
+            textarea {
+                overflow: hidden;
+                min-height: 30px;
+                max-height: 150px;
+                min-width: 100%;
+                max-width: 100%;
+                width: 100%;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
             }
 
         }

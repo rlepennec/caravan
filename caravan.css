@@ -57,10 +57,35 @@
   color: white;
   background-color: #be36ac;
 }
-.masque .voie .pouvoir .nom {
+.masque .voie .pouvoir .titre {
+  display: flex;
+  flex-direction: row;
+  border: none;
+}
+.masque .voie .pouvoir .titre label {
   color: white;
   background-color: black;
+  padding-top: 4px;
+  text-align: center;
+  width: 30px;
+  border: none;
+  border-radius: 0px;
 }
-.masque .voie .pouvoir .description {
-  height: 60px;
+.masque .voie .pouvoir .titre input {
+  color: white;
+  background-color: black;
+  border: none;
+  border-radius: 0px;
+}
+.masque .voie .pouvoir span {
+  width: 100%;
+  padding: 1px 6px;
+}
+.masque .voie .pouvoir textarea {
+  min-height: 30px;
+  max-height: 150px;
+  min-width: 100%;
+  max-width: 100%;
+  width: 100%;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
