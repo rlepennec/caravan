@@ -82,10 +82,12 @@
   padding: 1px 6px;
 }
 .masque .voie .pouvoir textarea {
-  min-height: 30px;
+  overflow: hidden;
+  min-height: 42px;
   max-height: 150px;
   min-width: 100%;
   max-width: 100%;
   width: 100%;
+  vertical-align: middle;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
