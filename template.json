@@ -9,8 +9,6 @@
             "age": 8,
             "xp": 0,
             "archetype": "",
-            "tic": "",
-            "phrase": "",
             "mystique": 0,
             "monstre": 0,
             "sante": {
@@ -34,7 +32,7 @@
             "pouvoir"
         ],
         "masque": {
-            "description": "sdfsdfs",
+            "description": "",
             "trait": "",
             "voie.1": {
                 "nom": "",

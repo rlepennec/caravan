@@ -1,5 +1,61 @@
-<form class="{{cssClass}}" autocomplete="off">
+<form class="{{cssClass}} chuchoteur" autocomplete="off">
+
+    <div class="header">
+
+        <div class="left">
+
+            <div class="top">
+
+                <div class="surnom">
+                    <label>Surnom</label>
+                    <input
+                        name="system.surnom"
+                        value="{{data.system.surnom}}"
+                        type="text"
+                        data-dtype="String"/>
+                </div>
+
+                <div class="age">
+                    <label>Age</label>
+                    <input
+                        name="system.age"
+                        value="{{data.system.age}}"
+                        type="text"
+                        data-dtype="String"/>
+                </div>
+
+                <div class="xp">
+                    <label>XP</label>
+                    <input
+                        name="system.xp"
+                        value="{{data.system.xp}}"
+                        type="text"
+                        data-dtype="String"/>
+                </div>
+
+            </div>
+
+            <div class="archetype">
+                <label>Archetype /Tic / Phrase</label>
+                <textarea
+                    class="bottom",
+                    autocomplete="off"
+                    name="system.archetype">{{data.system.archetype}}</textarea>
+            </div>
+
+        </div>
+
+        <div class="right">
+            <label>Portrait</label>
+            <img
+                src="{{actor.img}}"
+                title="{{actor.name}}"
+                data-edit="img"
+                class="right"/>
+        </div>
 
 
+
+    </div>
 
 </form>
