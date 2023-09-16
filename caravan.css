@@ -1,3 +1,109 @@
+.chuchoteur {
+  background-color: white;
+}
+.chuchoteur .header {
+  display: flex;
+  flex-direction: row;
+  height: 150px;
+  background-color: aquamarine;
+}
+.chuchoteur .header .left {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.chuchoteur .header .left .top {
+  display: flex;
+  flex-direction: row;
+}
+.chuchoteur .header .left .top .surnom {
+  display: flex;
+  flex-direction: column;
+}
+.chuchoteur .header .left .top .surnom label {
+  height: 20px;
+  vertical-align: middle;
+  text-align: center;
+}
+.chuchoteur .header .left .top .age {
+  display: flex;
+  flex-direction: column;
+}
+.chuchoteur .header .left .top .age label {
+  height: 20px;
+  vertical-align: middle;
+  text-align: center;
+}
+.chuchoteur .header .left .top .xp {
+  display: flex;
+  flex-direction: column;
+}
+.chuchoteur .header .left .top .xp label {
+  height: 20px;
+  vertical-align: middle;
+  text-align: center;
+}
+.chuchoteur .header .left .archetype {
+  height: 100%;
+}
+.chuchoteur .header .left .archetype textarea {
+  overflow: hidden;
+  min-height: 60px;
+  max-height: 60px;
+  min-width: 100%;
+  max-width: 100%;
+  width: 100%;
+  resize: none;
+  vertical-align: middle;
+  text-align: justify;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.chuchoteur .header .right {
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  height: 100%;
+}
+.chuchoteur .header .right img {
+  height: 100%;
+}
+.chuchoteur .header .right label {
+  height: 20px;
+  vertical-align: middle;
+  text-align: center;
+}
+.chuchoteur .middle {
+  display: flex;
+  flex-direction: row;
+}
+.chuchoteur .middle .sante {
+  display: flex;
+  flex-direction: row;
+}
+.chuchoteur .middle .sante .enfant {
+  display: flex;
+  flex-direction: column;
+}
+.chuchoteur .middle .sante .enfant label {
+  height: 20px;
+  vertical-align: middle;
+  text-align: center;
+}
+.chuchoteur .middle .sante .enfant input {
+  height: 100%;
+}
+.chuchoteur .middle .sante .chuchoteur {
+  display: flex;
+  flex-direction: column;
+}
+.chuchoteur .middle .sante .chuchoteur label {
+  height: 20px;
+  vertical-align: middle;
+  text-align: center;
+}
+.chuchoteur .middle .sante .chuchoteur input {
+  height: 100%;
+}
 .masque {
   background-color: white;
 }
@@ -24,7 +130,7 @@
   height: 250px;
 }
 .masque .header .right .description {
-  height: 170px;
+  height: 220px;
   padding: 10px;
 }
 .masque .header .right .description .editor {

@@ -3,6 +3,7 @@
     "TYPES.Actor.pnj": "PNJ",
     "TYPES.Item.masque": "Masque",
     "TYPES.Item.pouvoir": "Pouvoir",
+    "TYPES.Item.trait": "Trait",
     "CARAVAN": {
      }
 }

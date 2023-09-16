@@ -29,7 +29,8 @@
     "Item": {
         "types": [
             "masque",
-            "pouvoir"
+            "pouvoir",
+            "trait"
         ],
         "masque": {
             "description": "",
@@ -66,8 +67,10 @@
             }
         },
         "pouvoir": {
-            "description": "",
-            "effet": ""
+            "description": ""
+        },
+        "trait": {
+            "description": ""
         }
     }
 }

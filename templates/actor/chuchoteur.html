@@ -46,16 +46,83 @@
         </div>
 
         <div class="right">
-            <label>Portrait</label>
             <img
                 src="{{actor.img}}"
                 title="{{actor.name}}"
                 data-edit="img"
                 class="right"/>
+            <label>Portrait</label>
         </div>
 
+    </div>
 
+    <div class="middle">
+    
+        <div class="sante">
 
+            <label class="title">Santé</label>
+
+            <div class="enfant">
+                <label>Enfant</label>
+                <input
+                    name="system.sante.enfant"
+                    value="{{data.system.sante.enfant}}"
+                    type="text"
+                    data-dtype="String"/>
+            </div>
+
+            <div class="chuchoteur">
+                <label>Chuchoteur</label>
+                <input
+                    name="system.sante.chuchoteur"
+                    value="{{data.system.sante.chuchoteur}}"
+                    type="text"
+                    data-dtype="String"/>
+            </div>
+
+        </div>
+
+        <div class="mystique">
+            <label>Mystique</label>
+            <input
+                name="system.mystique"
+                value="{{data.system.mystique}}"
+                type="text"
+                data-dtype="String"/>
+        </div>
+
+        <div class="monstre">
+            <label>Monstre</label>
+            <input
+                name="system.monstre"
+                value="{{data.system.monstre}}"
+                type="text"
+                data-dtype="String"/>
+        </div>
+
+    </div>
+
+    <div class="traits">
+
+        <label>Traits</label>
+
+        {{#each actor.traits as |trait|}}
+        <div class="trait" data-id="{{trait.id}}">
+
+            <i class="delete fas fa-trash"></i>
+
+            <label>{{trait.name}}</label>
+
+        </div>
+        {{/each}}
+
+        <label>Enfant 1d4 / Chuchoteur 2d6</label>
+
+    </div>
+
+    <div class="masques">
+
+        
     </div>
 
 </form>
