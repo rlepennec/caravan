@@ -88,7 +88,7 @@
                 name="system.mystique"
                 value="{{data.system.mystique}}"
                 type="text"
-                data-dtype="String"/>
+                data-dtype="Number"/>
         </div>
 
         <div class="monstre">
@@ -97,7 +97,7 @@
                 name="system.monstre"
                 value="{{data.system.monstre}}"
                 type="text"
-                data-dtype="String"/>
+                data-dtype="Number"/>
         </div>
 
     </div>
@@ -122,7 +122,36 @@
 
     <div class="masques">
 
-        
+        {{#each actor.masques as |masque|}}
+        <div class="masque" data-id="{{masque.id}}">
+
+            <i class="delete fas fa-trash"></i>
+
+            <label>{{masque.name}}</label>
+
+            <label>{{masque.system.voie.1.nom}}</label>
+
+            <input
+                name="masque.system.voie.1.niveau"
+                value="{{masque.system.voie.1.niveau}}"
+                class="voie"
+                type="text"
+                data-dtype="Number",
+                data-voie="1"/>
+
+            <label>{{masque.system.voie.2.nom}}</label>
+
+            <input
+                name="masque.system.voie.2.niveau"
+                value="{{masque.system.voie.2.niveau}}"
+                class="voie"
+                type="text"
+                data-dtype="Number",
+                data-voie="2"/>
+
+        </div>
+        {{/each}}
+
     </div>
 
 </form>

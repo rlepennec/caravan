@@ -15,6 +15,8 @@ export class ChuchoteurSheet extends CaravanActorSheet {
     activateListeners(html) {
         super.activateListeners(html);
         html.find('.trait .delete').click(this.onDeleteTrait.bind(this));
+        html.find('.masque .delete').click(this.onDeleteMasque.bind(this));
+        html.find('.masque .voie').change(this.onSetVoie.bind(this));
     }
 
     /**
@@ -26,6 +28,30 @@ export class ChuchoteurSheet extends CaravanActorSheet {
         const id = $(event.currentTarget).closest(".trait").data("id");
         const item = this.actor.items.get(id);
         await this.actor.deleteEmbeddedDocuments('Item', [item.id]);
+    }
+
+    /**
+     * Delete the specified masque.
+     * @param event The click event.
+     */
+    async onDeleteMasque(event) {
+        event.preventDefault();
+        const id = $(event.currentTarget).closest(".masque").data("id");
+        const item = this.actor.items.get(id);
+        await this.actor.deleteEmbeddedDocuments('Item', [item.id]);
+    }
+
+    /**
+     * Set the specified voie.
+     * @param event The click event.
+     */
+    async onSetVoie(event) {
+        event.preventDefault();
+        const id = $(event.currentTarget).closest(".masque").data("id");
+        const voie = $(event.currentTarget).closest(".voie").data("voie");
+        const item = this.actor.items.get(id);
+        const value = $(event.currentTarget).closest(".voie").val();
+        await item.update({ ['system.voie.' + voie + '.niveau']: parseInt(value) });
     }
 
 }

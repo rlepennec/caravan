@@ -37,6 +37,7 @@
             "trait": "",
             "voie.1": {
                 "nom": "",
+                "niveau": 0,
                 "pouvoir.1": {
                     "nom": "",
                     "description": ""
@@ -52,6 +53,7 @@
             },
             "voie.2": {
                 "nom": "",
+                "niveau": 0,
                 "pouvoir.1": {
                     "nom": "",
                     "description": ""
