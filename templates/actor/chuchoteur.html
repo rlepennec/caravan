@@ -105,12 +105,14 @@
 
         <label>Traits: Enfant 1d4 / Chuchoteur 2d6</label>
 
-        {{#each actor.traits as |trait|}}
-        <div class="trait" data-id="{{trait.id}}">
-            <i class="delete fas fa-trash"></i>
-            <label>{{trait.name}}</label>
+        <div class="liste">
+            {{#each actor.traits as |trait|}}
+            <div class="trait" data-id="{{trait.id}}">
+                <i class="delete fas fa-trash"></i>
+                <label>{{trait.name}}</label>
+            </div>
+            {{/each}}
         </div>
-        {{/each}}
 
     </div>
 

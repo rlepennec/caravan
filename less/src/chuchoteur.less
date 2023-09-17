@@ -270,7 +270,7 @@
             img {
                 max-width: 100%;
                 max-height: 100%;
-                padding-top: 10%;
+                padding-top: 5px;
             }
 
             label {
@@ -295,16 +295,41 @@
         background-color: black;
         color: white;
 
-        label {
+        >label {
             height: 20px;
-            vertical-align: middle;
+            padding-top: 5px;
             text-align: center;
         }
 
-        .trait {
+        .liste {
             display: flex;
-            flex-direction: row;
-            height: 20px;
+            flex-direction: column;
+            background-color: white;
+            color: black;
+            margin-left: 10px;
+            margin-top: 10px;
+            width: 745px;
+            height: 110px;
+            border-radius: 5px;
+            padding-top: 10px;
+            padding-left: 10px;
+
+            .trait {
+                display: flex;
+                flex-direction: row;
+                height: 20px;
+
+                i {
+                    padding-left: 5px;
+                    padding-right: 5px;
+                }
+
+                label {
+
+                }
+
+            }
+
         }
 
     }
