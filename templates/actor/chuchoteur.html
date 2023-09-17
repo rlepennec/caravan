@@ -36,11 +36,57 @@
             </div>
 
             <div class="archetype">
-                <label>Archetype /Tic / Phrase</label>
+                <label>Archetype / Tic / Phrase</label>
                 <textarea
                     class="bottom",
                     autocomplete="off"
                     name="system.archetype">{{data.system.archetype}}</textarea>
+            </div>
+
+            <div class="middle">
+    
+                <div class="sante">
+        
+                    <label class="titre">Santé</label>
+        
+                    <div class="enfant">
+                        <label>Enfant</label>
+                        <input
+                            name="system.sante.enfant"
+                            value="{{data.system.sante.enfant}}"
+                            type="text"
+                            data-dtype="String"/>
+                    </div>
+        
+                    <div class="chuchoteur">
+                        <label>Chuchoteur</label>
+                        <input
+                            name="system.sante.chuchoteur"
+                            value="{{data.system.sante.chuchoteur}}"
+                            type="text"
+                            data-dtype="String"/>
+                    </div>
+        
+                </div>
+        
+                <div class="mystique">
+                    <label>Mystique</label>
+                    <input
+                        name="system.mystique"
+                        value="{{data.system.mystique}}"
+                        type="text"
+                        data-dtype="Number"/>
+                </div>
+        
+                <div class="monstre">
+                    <label>Monstre</label>
+                    <input
+                        name="system.monstre"
+                        value="{{data.system.monstre}}"
+                        type="text"
+                        data-dtype="Number"/>
+                </div>
+        
             </div>
 
         </div>
@@ -52,52 +98,6 @@
                 data-edit="img"
                 class="right"/>
             <label>Portrait</label>
-        </div>
-
-    </div>
-
-    <div class="middle">
-    
-        <div class="sante">
-
-            <label class="titre">Santé</label>
-
-            <div class="enfant">
-                <label>Enfant</label>
-                <input
-                    name="system.sante.enfant"
-                    value="{{data.system.sante.enfant}}"
-                    type="text"
-                    data-dtype="String"/>
-            </div>
-
-            <div class="chuchoteur">
-                <label>Chuchoteur</label>
-                <input
-                    name="system.sante.chuchoteur"
-                    value="{{data.system.sante.chuchoteur}}"
-                    type="text"
-                    data-dtype="String"/>
-            </div>
-
-        </div>
-
-        <div class="mystique">
-            <label>Mystique</label>
-            <input
-                name="system.mystique"
-                value="{{data.system.mystique}}"
-                type="text"
-                data-dtype="Number"/>
-        </div>
-
-        <div class="monstre">
-            <label>Monstre</label>
-            <input
-                name="system.monstre"
-                value="{{data.system.monstre}}"
-                type="text"
-                data-dtype="Number"/>
         </div>
 
     </div>
