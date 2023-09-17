@@ -106,100 +106,108 @@
         <label>Traits: Enfant 1d4 / Chuchoteur 2d6</label>
 
         <div class="liste">
+
             {{#each actor.traits as |trait|}}
             <div class="trait" data-id="{{trait.id}}">
                 <i class="delete fas fa-trash"></i>
                 <label>{{trait.name}}</label>
             </div>
             {{/each}}
+
         </div>
 
     </div>
 
     <div class="masques">
 
-        {{#each actor.masques as |masque|}}
-        <div class="masque" data-id="{{masque.id}}">
+        <label>Masques</label>
 
-            <div class="titre">
-                <i class="delete fas fa-trash"></i>
-                <label>{{masque.name}}</label>
-            </div>
+        <div class="liste">
 
-            <div class="voie">
+            {{#each actor.masques as |masque|}}
+            <div class="masque" data-id="{{masque.id}}">
 
                 <div class="titre">
-                    <label>{{masque.system.voie.1.nom}}</label>
-                    <input
-                        name="masque.system.voie.1.niveau"
-                        value="{{masque.system.voie.1.niveau}}"
-                        class="voie"
-                        type="text"
-                        data-dtype="Number",
-                        data-voie="1"/>
+                    <i class="delete fas fa-trash"></i>
+                    <label>{{masque.name}}</label>
                 </div>
-    
-                {{#if (gt masque.system.voie.1.niveau 0)}}
-                <div class="pouvoir">
-                    <label>{{masque.system.voie.1.pouvoir.1.nom}}</label>
-                    <label>{{masque.system.voie.1.pouvoir.1.description}}</label>
-                </div>
-                {{/if}}
 
-                {{#if (gt masque.system.voie.1.niveau 1)}}
-                <div class="pouvoir">
-                    <label>{{masque.system.voie.1.pouvoir.2.nom}}</label>
-                    <label>{{masque.system.voie.1.pouvoir.2.description}}</label>
-                </div>
-                {{/if}}
+                <div class="voie">
 
-                {{#if (gt masque.system.voie.1.niveau 2)}}
-                <div class="pouvoir">
-                    <label>{{masque.system.voie.1.pouvoir.3.nom}}</label>
-                    <label>{{masque.system.voie.1.pouvoir.3.description}}</label>
+                    <div class="titre">
+                        <label>{{masque.system.voie.1.nom}}</label>
+                        <input
+                            name="masque.system.voie.1.niveau"
+                            value="{{masque.system.voie.1.niveau}}"
+                            class="voie"
+                            type="text"
+                            data-dtype="Number",
+                            data-voie="1"/>
+                    </div>
+        
+                    {{#if (gt masque.system.voie.1.niveau 0)}}
+                    <div class="pouvoir">
+                        <label>{{masque.system.voie.1.pouvoir.1.nom}}</label>
+                        <label>{{masque.system.voie.1.pouvoir.1.description}}</label>
+                    </div>
+                    {{/if}}
+
+                    {{#if (gt masque.system.voie.1.niveau 1)}}
+                    <div class="pouvoir">
+                        <label>{{masque.system.voie.1.pouvoir.2.nom}}</label>
+                        <label>{{masque.system.voie.1.pouvoir.2.description}}</label>
+                    </div>
+                    {{/if}}
+
+                    {{#if (gt masque.system.voie.1.niveau 2)}}
+                    <div class="pouvoir">
+                        <label>{{masque.system.voie.1.pouvoir.3.nom}}</label>
+                        <label>{{masque.system.voie.1.pouvoir.3.description}}</label>
+                    </div>
+                    {{/if}}
+
                 </div>
-                {{/if}}
+
+                <div class="voie">
+
+                    <div class="titre">
+                        <label>{{masque.system.voie.2.nom}}</label>
+                        <input
+                            name="masque.system.voie.2.niveau"
+                            value="{{masque.system.voie.2.niveau}}"
+                            class="voie"
+                            type="text"
+                            data-dtype="Number",
+                            data-voie="2"/>
+                    </div>
+        
+                    {{#if (gt masque.system.voie.2.niveau 0)}}
+                    <div class="pouvoir">
+                        <label>{{masque.system.voie.2.pouvoir.1.nom}}</label>
+                        <label>{{masque.system.voie.2.pouvoir.1.description}}</label>
+                    </div>
+                    {{/if}}
+
+                    {{#if (gt masque.system.voie.2.niveau 1)}}
+                    <div class="pouvoir">
+                        <label>{{masque.system.voie.2.pouvoir.2.nom}}</label>
+                        <label>{{masque.system.voie.2.pouvoir.2.description}}</label>
+                    </div>
+                    {{/if}}
+
+                    {{#if (gt masque.system.voie.2.niveau 2)}}
+                    <div class="pouvoir">
+                        <label>{{masque.system.voie.2.pouvoir.3.nom}}</label>
+                        <label>{{masque.system.voie.2.pouvoir.3.description}}</label>
+                    </div>
+                    {{/if}}
+
+                </div>
 
             </div>
-
-            <div class="voie">
-
-                <div class="titre">
-                    <label>{{masque.system.voie.2.nom}}</label>
-                    <input
-                        name="masque.system.voie.2.niveau"
-                        value="{{masque.system.voie.2.niveau}}"
-                        class="voie"
-                        type="text"
-                        data-dtype="Number",
-                        data-voie="2"/>
-                </div>
-    
-                {{#if (gt masque.system.voie.2.niveau 0)}}
-                <div class="pouvoir">
-                    <label>{{masque.system.voie.2.pouvoir.1.nom}}</label>
-                    <label>{{masque.system.voie.2.pouvoir.1.description}}</label>
-                </div>
-                {{/if}}
-
-                {{#if (gt masque.system.voie.2.niveau 1)}}
-                <div class="pouvoir">
-                    <label>{{masque.system.voie.2.pouvoir.2.nom}}</label>
-                    <label>{{masque.system.voie.2.pouvoir.2.description}}</label>
-                </div>
-                {{/if}}
-
-                {{#if (gt masque.system.voie.2.niveau 2)}}
-                <div class="pouvoir">
-                    <label>{{masque.system.voie.2.pouvoir.3.nom}}</label>
-                    <label>{{masque.system.voie.2.pouvoir.3.description}}</label>
-                </div>
-                {{/if}}
-
-            </div>
+            {{/each}}
 
         </div>
-        {{/each}}
 
     </div>
 
