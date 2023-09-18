@@ -5,15 +5,14 @@
             "pnj"
         ],
         "chuchoteur": {
-            "surnom": "",
             "age": 8,
             "xp": 0,
             "archetype": "",
-            "mystique": 0,
+            "mystique": 6,
             "monstre": 0,
             "sante": {
-                "enfant": 0,
-                "chuchoteur": 0
+                "enfant": 3,
+                "chuchoteur": 6
             },
             "traits": [],
             "masques": []
