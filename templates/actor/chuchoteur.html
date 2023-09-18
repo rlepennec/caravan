@@ -124,6 +124,18 @@
 
         <div class="liste">
 
+            <div class="header">
+
+                <label>Masque</label>
+
+                <label>Trait</label>
+
+                <label>Voie 1</label>
+
+                <label>Voie 2</label>
+
+            </div>
+
             {{#each actor.masques as |masque|}}
             <div class="masque" data-id="{{masque.id}}">
 
@@ -132,6 +144,7 @@
                     <label>{{masque.name}}</label>
                 </div>
 
+                <!--
                 <div class="voie">
 
                     <div class="titre">
@@ -203,6 +216,7 @@
                     {{/if}}
 
                 </div>
+                -->
 
             </div>
             {{/each}}
