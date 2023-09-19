@@ -269,7 +269,7 @@
 .chuchoteur .traits .liste .trait {
   display: flex;
   flex-direction: row;
-  height: 20px;
+  height: 22px;
 }
 .chuchoteur .traits .liste .trait i {
   padding-left: 5px;
