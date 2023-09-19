@@ -126,23 +126,40 @@
 
             <div class="header">
 
-                <label>Masque</label>
+                <label class="masque">Masque</label>
 
-                <label>Trait</label>
+                <label class="trait">Trait</label>
 
-                <label>Voie 1</label>
+                <label class="voie-1">Voie 1</label>
 
-                <label>Voie 2</label>
+                <label class="voie-2">Voie 2</label>
 
             </div>
 
             {{#each actor.masques as |masque|}}
             <div class="masque" data-id="{{masque.id}}">
 
-                <div class="titre">
-                    <i class="delete fas fa-trash"></i>
-                    <label>{{masque.name}}</label>
-                </div>
+                <i class="delete fas fa-trash"></i>
+
+                <label class="nom">{{masque.name}}</label>
+
+                <label class="trait">{{masque.system.trait}}</label>
+
+                <input
+                    name="masque.system.voie.1.niveau"
+                    value="{{masque.system.voie.1.niveau}}"
+                    class="niveau-1"
+                    type="text"
+                    data-dtype="Number",
+                    data-voie="1"/>
+
+                <input
+                    name="masque.system.voie.1.niveau"
+                    value="{{masque.system.voie.1.niveau}}"
+                    class="niveau-2"
+                    type="text"
+                    data-dtype="Number",
+                    data-voie="1"/>
 
                 <!--
                 <div class="voie">

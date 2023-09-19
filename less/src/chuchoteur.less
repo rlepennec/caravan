@@ -364,29 +364,62 @@
             border-radius: 5px;
             padding-top: 10px;
             padding-left: 10px;
+            padding-right: 10px;
 
-            .masque {
-                height: 20px;
+            .header {
+                display: flex;
+                flex-direction: row;
+                height: 30px;
+                border-bottom-style: dashed;
+                margin-bottom: 15px;
 
-                >.titre {
-                    display: flex;
-                    flex-direction: row;
+                .masque {
+                    width: 150px;
+                    padding-left: 50px;
                 }
 
-                .voie {
-                    display: flex;
-                    flex-direction: column;
+                .trait {
+                    width: 133px;
+                }
 
-                    .titre {
-                        display: flex;
-                        flex-direction: row;
-                    }
+                .voie-1 {
+                    width: 52px;
+                }
 
-                    .pouvoir {
-                        display: flex;
-                        flex-direction: column;
-                    }
+                .voie-2 {
+                    width: 52px;
+                }
 
+            }
+
+            >.masque {
+                display: flex;
+                flex-direction: row;
+                height: 22px;
+                padding-left: 10px;
+
+                .delete {
+                    width: 35px;
+                }
+
+                .nom {
+                    width: 100px;
+                }
+
+                .trait {
+                    width: 130px;
+                }
+
+                .niveau-1 {
+                    width: 50px;
+                    text-align: center;
+                    border: none;
+                }
+
+                .niveau-2 {
+                    width: 50px;
+                    text-align: center;
+                    border: none;
                 }
 
             }

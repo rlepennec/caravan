@@ -304,25 +304,52 @@
   border-radius: 5px;
   padding-top: 10px;
   padding-left: 10px;
+  padding-right: 10px;
 }
-.chuchoteur .masques .liste .masque {
-  height: 20px;
-}
-.chuchoteur .masques .liste .masque > .titre {
+.chuchoteur .masques .liste .header {
   display: flex;
   flex-direction: row;
+  height: 30px;
+  border-bottom-style: dashed;
+  margin-bottom: 15px;
 }
-.chuchoteur .masques .liste .masque .voie {
-  display: flex;
-  flex-direction: column;
+.chuchoteur .masques .liste .header .masque {
+  width: 150px;
+  padding-left: 50px;
 }
-.chuchoteur .masques .liste .masque .voie .titre {
+.chuchoteur .masques .liste .header .trait {
+  width: 133px;
+}
+.chuchoteur .masques .liste .header .voie-1 {
+  width: 52px;
+}
+.chuchoteur .masques .liste .header .voie-2 {
+  width: 52px;
+}
+.chuchoteur .masques .liste > .masque {
   display: flex;
   flex-direction: row;
+  height: 22px;
+  padding-left: 10px;
 }
-.chuchoteur .masques .liste .masque .voie .pouvoir {
-  display: flex;
-  flex-direction: column;
+.chuchoteur .masques .liste > .masque .delete {
+  width: 35px;
+}
+.chuchoteur .masques .liste > .masque .nom {
+  width: 100px;
+}
+.chuchoteur .masques .liste > .masque .trait {
+  width: 130px;
+}
+.chuchoteur .masques .liste > .masque .niveau-1 {
+  width: 50px;
+  text-align: center;
+  border: none;
+}
+.chuchoteur .masques .liste > .masque .niveau-2 {
+  width: 50px;
+  text-align: center;
+  border: none;
 }
 .masque {
   background-color: white;
@@ -350,7 +377,7 @@
   height: 250px;
 }
 .masque .header .right .description {
-  height: 220px;
+  height: 175px;
   padding: 10px;
 }
 .masque .header .right .description .editor {
