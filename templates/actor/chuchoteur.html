@@ -141,7 +141,7 @@
 
                 <i class="delete fas fa-trash"></i>
 
-                <label class="nom">{{masque.name}}</label>
+                <label class="nom open">{{masque.name}}</label>
 
                 <label class="trait">{{masque.system.trait}}</label>
 
@@ -160,80 +160,6 @@
                     type="text"
                     data-dtype="Number",
                     data-voie="1"/>
-
-                <!--
-                <div class="voie">
-
-                    <div class="titre">
-                        <label>{{masque.system.voie.1.nom}}</label>
-                        <input
-                            name="masque.system.voie.1.niveau"
-                            value="{{masque.system.voie.1.niveau}}"
-                            class="voie"
-                            type="text"
-                            data-dtype="Number",
-                            data-voie="1"/>
-                    </div>
-        
-                    {{#if (gt masque.system.voie.1.niveau 0)}}
-                    <div class="pouvoir">
-                        <label>{{masque.system.voie.1.pouvoir.1.nom}}</label>
-                        <label>{{masque.system.voie.1.pouvoir.1.description}}</label>
-                    </div>
-                    {{/if}}
-
-                    {{#if (gt masque.system.voie.1.niveau 1)}}
-                    <div class="pouvoir">
-                        <label>{{masque.system.voie.1.pouvoir.2.nom}}</label>
-                        <label>{{masque.system.voie.1.pouvoir.2.description}}</label>
-                    </div>
-                    {{/if}}
-
-                    {{#if (gt masque.system.voie.1.niveau 2)}}
-                    <div class="pouvoir">
-                        <label>{{masque.system.voie.1.pouvoir.3.nom}}</label>
-                        <label>{{masque.system.voie.1.pouvoir.3.description}}</label>
-                    </div>
-                    {{/if}}
-
-                </div>
-
-                <div class="voie">
-
-                    <div class="titre">
-                        <label>{{masque.system.voie.2.nom}}</label>
-                        <input
-                            name="masque.system.voie.2.niveau"
-                            value="{{masque.system.voie.2.niveau}}"
-                            class="voie"
-                            type="text"
-                            data-dtype="Number",
-                            data-voie="2"/>
-                    </div>
-        
-                    {{#if (gt masque.system.voie.2.niveau 0)}}
-                    <div class="pouvoir">
-                        <label>{{masque.system.voie.2.pouvoir.1.nom}}</label>
-                        <label>{{masque.system.voie.2.pouvoir.1.description}}</label>
-                    </div>
-                    {{/if}}
-
-                    {{#if (gt masque.system.voie.2.niveau 1)}}
-                    <div class="pouvoir">
-                        <label>{{masque.system.voie.2.pouvoir.2.nom}}</label>
-                        <label>{{masque.system.voie.2.pouvoir.2.description}}</label>
-                    </div>
-                    {{/if}}
-
-                    {{#if (gt masque.system.voie.2.niveau 2)}}
-                    <div class="pouvoir">
-                        <label>{{masque.system.voie.2.pouvoir.3.nom}}</label>
-                        <label>{{masque.system.voie.2.pouvoir.3.description}}</label>
-                    </div>
-                    {{/if}}
-
-                </div>
-                -->
 
             </div>
             {{/each}}
