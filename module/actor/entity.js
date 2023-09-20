@@ -14,4 +14,11 @@ export class CaravanActor extends Actor {
         return this.items.filter(i => i.type === 'masque');
     }
 
+    /**
+     * @returns the equipements. 
+     */
+    get masques() {
+        return this.items.filter(i => i.type === 'equipement');
+    }
+
 }

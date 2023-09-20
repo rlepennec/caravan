@@ -1,6 +1,7 @@
 {
     "TYPES.Actor.chuchoteur": "Chuchoteur",
     "TYPES.Actor.pnj": "PNJ",
+    "TYPES.Item.equipement": "Equipement",
     "TYPES.Item.masque": "Masque",
     "TYPES.Item.pouvoir": "Pouvoir",
     "TYPES.Item.trait": "Trait",

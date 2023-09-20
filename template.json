@@ -27,10 +27,14 @@
     },
     "Item": {
         "types": [
+            "equipement",
             "masque",
             "pouvoir",
             "trait"
         ],
+        "equipement": {
+            "description": ""
+        },
         "masque": {
             "description": "",
             "trait": "",
