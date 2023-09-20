@@ -236,7 +236,16 @@
   background-color: black;
   color: white;
 }
-.chuchoteur .traits {
+.chuchoteur .traits-masques-equipements {
+  display: flex;
+  flex-direction: row;
+}
+.chuchoteur .traits-masques-equipements .traits-masques {
+  display: flex;
+  flex-direction: column;
+  width: 507px;
+}
+.chuchoteur .traits-masques-equipements .traits-masques .traits {
   display: flex;
   flex-direction: column;
   margin-left: 10px;
@@ -248,34 +257,34 @@
   background-color: black;
   color: white;
 }
-.chuchoteur .traits > label {
+.chuchoteur .traits-masques-equipements .traits-masques .traits > label {
   height: 20px;
   padding-top: 5px;
   text-align: center;
 }
-.chuchoteur .traits .liste {
+.chuchoteur .traits-masques-equipements .traits-masques .traits .liste {
   display: flex;
   flex-direction: column;
   background-color: white;
   color: black;
   margin-left: 10px;
   margin-top: 10px;
-  width: 745px;
   height: 110px;
   border-radius: 5px;
   padding-top: 10px;
   padding-left: 10px;
+  width: 467px;
 }
-.chuchoteur .traits .liste .trait {
+.chuchoteur .traits-masques-equipements .traits-masques .traits .liste .trait {
   display: flex;
   flex-direction: row;
   height: 22px;
 }
-.chuchoteur .traits .liste .trait i {
+.chuchoteur .traits-masques-equipements .traits-masques .traits .liste .trait i {
   padding-left: 5px;
   padding-right: 5px;
 }
-.chuchoteur .masques {
+.chuchoteur .traits-masques-equipements .traits-masques .masques {
   display: flex;
   flex-direction: column;
   margin-left: 10px;
@@ -287,69 +296,109 @@
   background-color: black;
   color: white;
 }
-.chuchoteur .masques > label {
+.chuchoteur .traits-masques-equipements .traits-masques .masques > label {
   height: 20px;
   padding-top: 5px;
   text-align: center;
 }
-.chuchoteur .masques .liste {
+.chuchoteur .traits-masques-equipements .traits-masques .masques .liste {
   display: flex;
   flex-direction: column;
   background-color: white;
   color: black;
   margin-left: 10px;
   margin-top: 10px;
-  width: 745px;
   height: 290px;
+  width: 467px;
   border-radius: 5px;
   padding-top: 10px;
   padding-left: 10px;
   padding-right: 10px;
 }
-.chuchoteur .masques .liste .header {
+.chuchoteur .traits-masques-equipements .traits-masques .masques .liste .header {
   display: flex;
   flex-direction: row;
   height: 30px;
   border-bottom-style: dashed;
   margin-bottom: 15px;
 }
-.chuchoteur .masques .liste .header .masque {
+.chuchoteur .traits-masques-equipements .traits-masques .masques .liste .header .masque {
   width: 150px;
   padding-left: 50px;
 }
-.chuchoteur .masques .liste .header .trait {
-  width: 133px;
+.chuchoteur .traits-masques-equipements .traits-masques .masques .liste .header .trait {
+  width: 178px;
 }
-.chuchoteur .masques .liste .header .voie-1 {
+.chuchoteur .traits-masques-equipements .traits-masques .masques .liste .header .voie-1 {
   width: 52px;
 }
-.chuchoteur .masques .liste .header .voie-2 {
+.chuchoteur .traits-masques-equipements .traits-masques .masques .liste .header .voie-2 {
   width: 52px;
 }
-.chuchoteur .masques .liste > .masque {
+.chuchoteur .traits-masques-equipements .traits-masques .masques .liste > .masque {
   display: flex;
   flex-direction: row;
   height: 22px;
   padding-left: 10px;
 }
-.chuchoteur .masques .liste > .masque .delete {
+.chuchoteur .traits-masques-equipements .traits-masques .masques .liste > .masque .delete {
   width: 35px;
 }
-.chuchoteur .masques .liste > .masque .nom {
+.chuchoteur .traits-masques-equipements .traits-masques .masques .liste > .masque .nom {
   width: 100px;
 }
-.chuchoteur .masques .liste > .masque .trait {
-  width: 130px;
+.chuchoteur .traits-masques-equipements .traits-masques .masques .liste > .masque .trait {
+  width: 178px;
 }
-.chuchoteur .masques .liste > .masque .niveau-1 {
+.chuchoteur .traits-masques-equipements .traits-masques .masques .liste > .masque .niveau-1 {
   width: 50px;
   text-align: center;
   border: none;
 }
-.chuchoteur .masques .liste > .masque .niveau-2 {
+.chuchoteur .traits-masques-equipements .traits-masques .masques .liste > .masque .niveau-2 {
   width: 50px;
   text-align: center;
   border: none;
+}
+.chuchoteur .traits-masques-equipements .equipements {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 489px;
+  width: 257px;
+  margin-top: 10px;
+  border: 2px;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+}
+.chuchoteur .traits-masques-equipements .equipements > label {
+  height: 20px;
+  padding-top: 5px;
+  text-align: center;
+}
+.chuchoteur .traits-masques-equipements .equipements .liste {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  color: black;
+  margin-left: 10px;
+  margin-top: 10px;
+  height: 449px;
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-left: 10px;
+  width: 237px;
+}
+.chuchoteur .traits-masques-equipements .equipements .liste .equipement {
+  display: flex;
+  flex-direction: row;
+  height: 22px;
+}
+.chuchoteur .traits-masques-equipements .equipements .liste .equipement i {
+  padding-left: 5px;
+  padding-right: 5px;
 }
 .masque {
   background-color: white;

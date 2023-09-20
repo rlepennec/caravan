@@ -101,68 +101,93 @@
 
     </div>
 
-    <div class="traits">
+    <div class="traits-masques-equipements">
 
-        <label>Traits: Enfant 1d4 / Chuchoteur 2d6</label>
+        <div class="traits-masques">
 
-        <div class="liste">
+            <div class="traits">
 
-            {{#each actor.traits as |trait|}}
-            <div class="trait" data-id="{{trait.id}}">
-                <i class="delete fas fa-trash"></i>
-                <label>{{trait.name}}</label>
+                <label>Traits: Enfant 1d4 / Chuchoteur 2d6</label>
+
+                <div class="liste">
+
+                    {{#each actor.traits as |trait|}}
+                    <div class="trait" data-id="{{trait.id}}">
+                        <i class="delete fas fa-trash"></i>
+                        <label>{{trait.name}}</label>
+                    </div>
+                    {{/each}}
+
+                </div>
+
             </div>
-            {{/each}}
+
+            <div class="masques">
+
+                <label>Masques</label>
+
+                <div class="liste">
+
+                    <div class="header">
+
+                        <label class="masque">Masque</label>
+
+                        <label class="trait">Trait</label>
+
+                        <label class="voie-1">Voie 1</label>
+
+                        <label class="voie-2">Voie 2</label>
+
+                    </div>
+
+                    {{#each actor.masques as |masque|}}
+                    <div class="masque" data-id="{{masque.id}}">
+
+                        <i class="delete fas fa-trash"></i>
+
+                        <label class="nom open">{{masque.name}}</label>
+
+                        <label class="trait">{{masque.system.trait}}</label>
+
+                        <input
+                            name="masque.system.voie.1.niveau"
+                            value="{{masque.system.voie.1.niveau}}"
+                            class="niveau-1"
+                            type="text"
+                            data-dtype="Number",
+                            data-voie="1"/>
+
+                        <input
+                            name="masque.system.voie.1.niveau"
+                            value="{{masque.system.voie.1.niveau}}"
+                            class="niveau-2"
+                            type="text"
+                            data-dtype="Number",
+                            data-voie="1"/>
+
+                    </div>
+                    {{/each}}
+
+                </div>
+
+            </div>
 
         </div>
 
-    </div>
+        <div class="equipements">
+            
+            <label>Equipements</label>
 
-    <div class="masques">
+            <div class="liste">
 
-        <label>Masques</label>
-
-        <div class="liste">
-
-            <div class="header">
-
-                <label class="masque">Masque</label>
-
-                <label class="trait">Trait</label>
-
-                <label class="voie-1">Voie 1</label>
-
-                <label class="voie-2">Voie 2</label>
+                {{#each actor.equipements as |equipement|}}
+                <div class="equipement" data-id="{{equipement.id}}">
+                    <i class="delete fas fa-trash"></i>
+                    <label>{{equipement.name}}</label>
+                </div>
+                {{/each}}
 
             </div>
-
-            {{#each actor.masques as |masque|}}
-            <div class="masque" data-id="{{masque.id}}">
-
-                <i class="delete fas fa-trash"></i>
-
-                <label class="nom open">{{masque.name}}</label>
-
-                <label class="trait">{{masque.system.trait}}</label>
-
-                <input
-                    name="masque.system.voie.1.niveau"
-                    value="{{masque.system.voie.1.niveau}}"
-                    class="niveau-1"
-                    type="text"
-                    data-dtype="Number",
-                    data-voie="1"/>
-
-                <input
-                    name="masque.system.voie.1.niveau"
-                    value="{{masque.system.voie.1.niveau}}"
-                    class="niveau-2"
-                    type="text"
-                    data-dtype="Number",
-                    data-voie="1"/>
-
-            </div>
-            {{/each}}
 
         </div>
 
