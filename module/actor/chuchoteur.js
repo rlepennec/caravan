@@ -30,6 +30,8 @@ export class ChuchoteurSheet extends CaravanActorSheet {
         html.find('.masque .delete').click(this.onDeleteMasque.bind(this));
         html.find('.masque .voie').change(this.onSetVoie.bind(this));
         html.find('.masque .open').click(this.onOpenMasque.bind(this));
+        html.find('.masque .fa-masks-theater').click(this.onSelectMasque.bind(this));
+        
     }
 
     /**
@@ -93,5 +95,19 @@ export class ChuchoteurSheet extends CaravanActorSheet {
         return this;
     }
 
+    /**
+     * Select the specified masque.
+     * @param event The click event.
+     * @returns the instance.
+     */
+    async onSelectMasque(event) {
+        event.preventDefault();
+        const id = $(event.currentTarget).closest(".masque").data("id");
+        const item = this.actor.items.get(id);
+        if (item != null) {
+            await this.actor.update({ ['system.masque']: (this.actor.system.masque === item.id ? "" : item.id) });
+        }
+        return this;
+    }
 
 }
