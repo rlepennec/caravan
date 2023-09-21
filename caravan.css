@@ -327,7 +327,7 @@
   padding-left: 50px;
 }
 .chuchoteur .traits-masques-equipements .traits-masques .masques .liste .header .trait {
-  width: 178px;
+  width: 161px;
 }
 .chuchoteur .traits-masques-equipements .traits-masques .masques .liste .header .voie-1 {
   width: 52px;
@@ -348,7 +348,7 @@
   width: 100px;
 }
 .chuchoteur .traits-masques-equipements .traits-masques .masques .liste > .masque .trait {
-  width: 178px;
+  width: 160px;
 }
 .chuchoteur .traits-masques-equipements .traits-masques .masques .liste > .masque .niveau-1 {
   width: 50px;
@@ -359,6 +359,10 @@
   width: 50px;
   text-align: center;
   border: none;
+}
+.chuchoteur .traits-masques-equipements .traits-masques .masques .liste > .masque .fa-masks-theater {
+  margin-left: 13px;
+  padding-top: 4px;
 }
 .chuchoteur .traits-masques-equipements .equipements {
   display: flex;

@@ -165,6 +165,13 @@
                             data-dtype="Number",
                             data-voie="1"/>
 
+                        {{#if (eq masque.id ../actor.system.masque)}}
+                        <i class="fa-solid fa-masks-theater"></i>
+                        {{else}}
+                        <i class="fa-regular fa-masks-theater"></i>
+                        {{/if}}
+    
+
                     </div>
                     {{/each}}
 
