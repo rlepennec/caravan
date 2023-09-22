@@ -9,7 +9,7 @@ export class CaravanActor extends Actor {
             return this.img;
         } else {
             const item = this.items.find(i => i.id === this.system.masque);
-            return item.img;
+            return item.system.img;
         }
     }
 
