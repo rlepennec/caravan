@@ -1,5 +1,18 @@
 <form class="{{cssClass}} pnj" autocomplete="off">
 
+    <label>Portrait</label>
+    <img
+        src="{{actor.img}}"
+        title="{{actor.name}}"
+        data-edit="img"/>
+
+    <label>Nom</label>
+    <input
+        name="name"
+        value="{{actor.name}}"
+        type="text"
+        data-dtype="String"/>
+
     <label>Type</label>
     <input
         name="system.type"
