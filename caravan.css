@@ -424,24 +424,25 @@
 }
 .masque .header .left {
   height: 250px;
+  width: 176px;
 }
-.masque .header .right {
+.masque .header .middle {
   width: 100%;
   height: 250px;
 }
-.masque .header .right .description {
+.masque .header .middle .description {
   height: 175px;
   padding: 10px;
 }
-.masque .header .right .description .editor {
+.masque .header .middle .description .editor {
   height: 100%;
 }
-.masque .header .right .trait {
+.masque .header .middle .trait {
   display: flex;
   direction: row;
   height: 26px;
 }
-.masque .header .right .trait .nom {
+.masque .header .middle .trait .nom {
   width: 60px;
   padding-top: 4px;
   margin-left: 10px;
@@ -450,10 +451,14 @@
   text-align: center;
   vertical-align: middle;
 }
-.masque .header .right .trait .valeur {
+.masque .header .middle .trait .valeur {
   width: 100%;
   border: none;
   padding-left: 10px;
+}
+.masque .header .right {
+  height: 250px;
+  width: 176px;
 }
 .masque .voie {
   margin-top: 5px;

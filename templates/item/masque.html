@@ -15,7 +15,7 @@
             data-edit="img"
             class="left"/>
 
-        <div class="right">
+        <div class="middle">
 
             <div class="description">
                 {{editor (enrichHTML data.system.description owner) target="system.description" button=true owner=owner editable=editable}}
@@ -33,6 +33,12 @@
             </div>
 
         </div>
+
+        <img
+            src="{{item.system.img}}"
+            title="{{item.name}}"
+            data-edit="system.img"
+            class="right"/>
 
     </div>
 

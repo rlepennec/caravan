@@ -7,7 +7,7 @@ export class MasqueSheet extends CaravanItemSheet {
      */
 	static get defaultOptions() {
         return mergeObject(super.defaultOptions, {
-            width: 820,
+            width: 1000,
             height: 880,
             resizable: true
       });

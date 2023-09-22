@@ -39,6 +39,7 @@
         "masque": {
             "description": "",
             "trait": "",
+            "img": "icons/svg/mystery-man.svg",
             "voie.1": {
                 "nom": "",
                 "niveau": 0,
