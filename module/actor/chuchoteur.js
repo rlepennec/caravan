@@ -54,7 +54,6 @@ export class ChuchoteurSheet extends CaravanActorSheet {
         html.find('.masque .voie').change(this.onSetVoie.bind(this));
         html.find('.masque .open').click(this.onOpenItem.bind(this, 'masque'));
         html.find('.masque .fa-masks-theater').click(this.onSelectMasque.bind(this));
-
     }
 
     /**
