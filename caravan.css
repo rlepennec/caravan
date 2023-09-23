@@ -172,7 +172,7 @@
   display: flex;
   flex-direction: column;
   margin-left: 20px;
-  width: 100px;
+  width: 150px;
   border-radius: 5px;
   background-color: black;
   padding: 5px;
@@ -183,9 +183,16 @@
   height: 20px;
   color: white;
 }
+.chuchoteur > .header .left .middle .mystique label i {
+  margin-left: 10px;
+  color: #be36ac;
+}
+.chuchoteur > .header .left .middle .mystique label i:hover {
+  text-shadow: 0px 0px 1px #be36ac;
+}
 .chuchoteur > .header .left .middle .mystique input {
   background-color: white;
-  margin-left: 25px;
+  margin-left: 33px;
   border-radius: 50%;
   height: 40px;
   width: 40px;
@@ -194,7 +201,7 @@
   display: flex;
   flex-direction: column;
   margin-left: 20px;
-  width: 100px;
+  width: 150px;
   border-radius: 5px;
   background-color: black;
   padding: 5px;
@@ -207,7 +214,7 @@
 }
 .chuchoteur > .header .left .middle .monstre input {
   background-color: white;
-  margin-left: 25px;
+  margin-left: 33px;
   border-radius: 50%;
   height: 40px;
   width: 40px;
@@ -261,6 +268,13 @@
   height: 20px;
   padding-top: 5px;
   text-align: center;
+}
+.chuchoteur .traits-masques-equipements .traits-masques .traits > label i {
+  margin-left: 10px;
+  color: #be36ac;
+}
+.chuchoteur .traits-masques-equipements .traits-masques .traits > label i:hover {
+  text-shadow: 0px 0px 1px #be36ac;
 }
 .chuchoteur .traits-masques-equipements .traits-masques .traits .liste {
   display: flex;
@@ -642,9 +656,10 @@
 }
 .pnj .left .top .action label i {
   margin-left: 10px;
+  color: #be36ac;
 }
 .pnj .left .top .action label i:hover {
-  text-shadow: 0px 0px 2px white;
+  text-shadow: 0px 0px 1px #be36ac;
 }
 .pnj .left .top .action input {
   background-color: white;
