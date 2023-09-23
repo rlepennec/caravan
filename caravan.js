@@ -4,7 +4,6 @@ import { ChuchoteurSheet } from "./module/actor/chuchoteur.js";
 import { EquipementSheet } from "./module/item/equipement.js";
 import { MasqueSheet } from "./module/item/masque.js";
 import { PNJSheet } from "./module/actor/pnj.js";
-import { PouvoirSheet } from "./module/item/pouvoir.js";
 import { TraitSheet } from "./module/item/trait.js";
 import { HandlebarsHelper } from "./module/core/handlebars.js";
 
@@ -21,7 +20,6 @@ Hooks.once("init", function () {
     Items.unregisterSheet("core", ItemSheet);
     Items.registerSheet('caravan', EquipementSheet, { types: ['equipement'], makeDefault: true });
     Items.registerSheet('caravan', MasqueSheet, { types: ['masque'], makeDefault: true });
-    Items.registerSheet('caravan', PouvoirSheet, { types: ['pouvoir'], makeDefault: true });
     Items.registerSheet('caravan', TraitSheet, { types: ['trait'], makeDefault: true });
 
     Handlebars.registerHelper({

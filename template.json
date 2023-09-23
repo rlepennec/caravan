@@ -29,7 +29,6 @@
         "types": [
             "equipement",
             "masque",
-            "pouvoir",
             "trait"
         ],
         "equipement": {
@@ -71,9 +70,6 @@
                     "description": ""
                 }
             }
-        },
-        "pouvoir": {
-            "description": ""
         },
         "trait": {
             "description": ""
