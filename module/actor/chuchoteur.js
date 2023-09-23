@@ -46,12 +46,15 @@ export class ChuchoteurSheet extends CaravanActorSheet {
         super.activateListeners(html);
         html.find('.trait .delete').click(this.onDeleteItem.bind(this, 'trait'));
         html.find('.trait .open').click(this.onOpenItem.bind(this, 'trait'));
+        html.find('.traits .fa-dice').click(this.onRollTrait.bind(this));
+        html.find('.mystique .fa-dice').click(this.onRollMystique.bind(this));
         html.find('.equipement .delete').click(this.onDeleteItem.bind(this, 'equipement'));
         html.find('.equipement .open').click(this.onOpenItem.bind(this, 'equipement'));
         html.find('.masque .delete').click(this.onDeleteItem.bind(this, 'masque'));
         html.find('.masque .voie').change(this.onSetVoie.bind(this));
         html.find('.masque .open').click(this.onOpenItem.bind(this, 'masque'));
         html.find('.masque .fa-masks-theater').click(this.onSelectMasque.bind(this));
+
     }
 
     /**
@@ -106,6 +109,24 @@ export class ChuchoteurSheet extends CaravanActorSheet {
             await this.actor.update({ ['system.masque']: (this.actor.system.masque === item.id ? "" : item.id) });
         }
         return this;
+    }
+
+    /**
+     * Roll the specified trait.
+     * @param event The click event.
+     */
+    async onRollTrait(event) {
+        event.preventDefault();
+        console.log("Roll trait");
+    }
+
+    /**
+     * Roll the mystique level.
+     * @param event The click event.
+     */
+    async onRollMystique(event) {
+        event.preventDefault();
+        console.log("Roll mystique");
     }
 
 }
