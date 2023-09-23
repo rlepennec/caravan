@@ -1,17 +1,32 @@
 <form class="{{cssClass}} trait" autocomplete="off">
 
-    <input
-        class="name",
-        name="name"
-        type="text"
-        value="{{item.name}}"
-        class="name"/>
+    <div class="left">
 
-    <label>Description</label>
-    <input
-        name="system.description"
-        value="{{system.description}}"
-        type="text"
-        data-dtype="String"/>
+        <div class="nom">
+            <label>Nom</label>
+            <input
+                name="name"
+                value="{{item.name}}"
+                type="text"
+                data-dtype="String"/>
+        </div>
+
+        <div class="description">
+            <label>Description</label>
+            <textarea
+                class="bottom",
+                autocomplete="off"
+                name="system.description">{{data.system.description}}</textarea>
+        </div>
+
+    </div>
+
+    <div class="right">
+        <label>Portrait</label>
+        <img
+            src="{{item.img}}"
+            title="{{item.name}}"
+            data-edit="img"/>
+    </div>
 
 </form>
