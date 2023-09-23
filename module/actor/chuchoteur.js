@@ -26,7 +26,9 @@ export class ChuchoteurSheet extends CaravanActorSheet {
     activateListeners(html) {
         super.activateListeners(html);
         html.find('.trait .delete').click(this.onDeleteTrait.bind(this));
+        html.find('.trait .open').click(this.onOpenTrait.bind(this));
         html.find('.equipement .delete').click(this.onDeleteEquipement.bind(this));
+        html.find('.equipement .open').click(this.onOpenEquipement.bind(this));
         html.find('.masque .delete').click(this.onDeleteMasque.bind(this));
         html.find('.masque .voie').change(this.onSetVoie.bind(this));
         html.find('.masque .open').click(this.onOpenMasque.bind(this));
@@ -88,6 +90,36 @@ export class ChuchoteurSheet extends CaravanActorSheet {
     async onOpenMasque(event) {
         event.preventDefault();
         const id = $(event.currentTarget).closest(".masque").data("id");
+        const item = this.actor.items.get(id);
+        if (item != null) {
+            item.sheet.render(true);
+        }
+        return this;
+    }
+
+    /**
+     * Open the specified trait.
+     * @param event The click event.
+     * @returns the instance.
+     */
+    async onOpenTrait(event) {
+        event.preventDefault();
+        const id = $(event.currentTarget).closest(".trait").data("id");
+        const item = this.actor.items.get(id);
+        if (item != null) {
+            item.sheet.render(true);
+        }
+        return this;
+    }
+
+    /**
+     * Open the specified equipement.
+     * @param event The click event.
+     * @returns the instance.
+     */
+    async onOpenEquipement(event) {
+        event.preventDefault();
+        const id = $(event.currentTarget).closest(".equipement").data("id");
         const item = this.actor.items.get(id);
         if (item != null) {
             item.sheet.render(true);

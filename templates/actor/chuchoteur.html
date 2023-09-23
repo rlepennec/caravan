@@ -114,7 +114,7 @@
                     {{#each actor.traits as |trait|}}
                     <div class="trait" data-id="{{trait.id}}">
                         <i class="delete fas fa-trash"></i>
-                        <label>{{trait.name}}</label>
+                        <label class="open">{{trait.name}}</label>
                     </div>
                     {{/each}}
 
@@ -190,7 +190,7 @@
                 {{#each actor.equipements as |equipement|}}
                 <div class="equipement" data-id="{{equipement.id}}">
                     <i class="delete fas fa-trash"></i>
-                    <label>{{equipement.name}}</label>
+                    <label class="open">{{equipement.name}}</label>
                 </div>
                 {{/each}}
 

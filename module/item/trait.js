@@ -9,7 +9,7 @@ export class TraitSheet extends CaravanItemSheet {
         return mergeObject(super.defaultOptions, {
             width: 700,
             height: 220,
-            resizable: true
+            resizable: false
       });
     }
 
