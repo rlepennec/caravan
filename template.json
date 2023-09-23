@@ -19,7 +19,7 @@
             "masques": []
         },
         "pnj": {
-            "action": 1,
+            "action": "1d6",
             "vie": 1,
             "attaque": 1,
             "description": ""
