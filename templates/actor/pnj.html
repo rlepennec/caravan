@@ -1,51 +1,63 @@
 <form class="{{cssClass}} pnj" autocomplete="off">
 
-    <label>Portrait</label>
-    <img
-        src="{{actor.img}}"
-        title="{{actor.name}}"
-        data-edit="img"/>
+    <div class="left">
 
-    <label>Nom</label>
-    <input
-        name="name"
-        value="{{actor.name}}"
-        type="text"
-        data-dtype="String"/>
+        <div class="top">
 
-    <label>Type</label>
-    <input
-        name="system.type"
-        value="{{data.system.type}}"
-        type="text"
-        data-dtype="String"/>
+            <div class="nom">
+                <label>Nom</label>
+                <input
+                    name="name"
+                    value="{{actor.name}}"
+                    type="text"
+                    data-dtype="String"/>
+            </div>
 
-    <label>Action</label>
-    <input
-        name="system.action"
-        value="{{data.system.action}}"
-        type="text"
-        data-dtype="Number"/>
+            <div class="action">
+                <label>Action</label>
+                <input
+                    name="system.action"
+                    value="{{data.system.action}}"
+                    type="text"
+                    data-dtype="Number"/>
+            </div>
 
-    <label>Vie</label>
-    <input
-        name="system.vie"
-        value="{{data.system.vie}}"
-        type="text"
-        data-dtype="Number"/>
+            <div class="vie">
+                <label>Vie</label>
+                <input
+                    name="system.vie"
+                    value="{{data.system.vie}}"
+                    type="text"
+                    data-dtype="Number"/>
+            </div>
 
-    <label>Attaque</label>
-    <input
-        name="system.attaque"
-        value="{{data.system.attaque}}"
-        type="text"
-        data-dtype="Number"/>
+            <div class="attaque">
+                <label>Attaque</label>
+                <input
+                    name="system.attaque"
+                    value="{{data.system.attaque}}"
+                    type="text"
+                    data-dtype="Number"/>
+            </div>
 
-    <label>Description</label>
-    <input
-        name="system.description"
-        value="{{data.system.description}}"
-        type="text"
-        data-dtype="String"/>
+        </div>
+
+        <div class="description">
+            <label>Description</label>
+            <textarea
+                class="bottom",
+                autocomplete="off"
+                name="system.description">{{data.system.description}}</textarea>
+        </div>
+
+    </div>
+
+    <div class="right">
+        <label>Portrait</label>
+        <img
+            src="{{actor.img}}"
+            title="{{actor.name}}"
+            data-edit="img"/>
+    </div>
 
 </form>

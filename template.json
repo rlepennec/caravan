@@ -19,7 +19,6 @@
             "masques": []
         },
         "pnj": {
-            "type": "",
             "action": 1,
             "vie": 1,
             "attaque": 1,
