@@ -20,4 +20,21 @@ export class PNJSheet extends CaravanActorSheet {
         return 'systems/caravan/templates/actor/pnj.html';
     }
 
+    /**
+     * @override
+     */
+    activateListeners(html) {
+        super.activateListeners(html);
+        html.find('.action .fa-dice').click(this.onRollTrait.bind(this));
+    }
+
+    /**
+     * Roll the specified item.
+     * @param event The click event.
+     */
+    async onRollTrait(event) {
+        event.preventDefault();
+        console.log("Roll trait");
+    }
+
 }
