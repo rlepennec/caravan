@@ -1,4 +1,5 @@
 import { CaravanActorSheet } from "./base.js";
+import { MystiqueDialog } from "../dialog/mystiqueDialog.js";
 
 export class ChuchoteurSheet extends CaravanActorSheet {
 
@@ -125,7 +126,7 @@ export class ChuchoteurSheet extends CaravanActorSheet {
      */
     async onRollMystique(event) {
         event.preventDefault();
-        console.log("Roll mystique");
+        new MystiqueDialog(this.actor).render(true);
     }
 
 }
