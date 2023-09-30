@@ -73,6 +73,8 @@ export class MystiqueDialog extends FormApplication {
             .withTemplate("systems/caravan/templates/chat/mystique.hbs")
             .withData({
                 actor: this.object,
+                result: roll.result,
+                successful: successful
             })
             .withRoll(roll)
             .create();

@@ -50,5 +50,38 @@
 }
 
 .mystique-chat {
-    
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    height: 100px;
+
+    .right {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        .sentence {
+            text-align: center;
+            padding-top: 14px;
+        }
+
+        .result {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+
+            .roll {
+                font-size: 14px;
+                width: 30px;
+                height: 30px;
+                border: solid 1px;
+                border-radius: 50%;
+                background-color: #eded89;
+                padding-top: 5px;
+            }
+            
+        }
+
+    }
 }
