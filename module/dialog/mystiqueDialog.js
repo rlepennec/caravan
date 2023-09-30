@@ -65,6 +65,10 @@ export class MystiqueDialog extends FormApplication {
         const roll = await new Roll(this.dices + "d6kh").roll({async: true});
         const successful = roll.result < this.object.system.mystique;
 
+        if (!successful && this.object.system.mystique > 1) {
+            await this.object.update({ ['system.mystique']: this.object.system.mystique - 1 });
+        }
+
         await new Chat(this.object)
             .withTemplate("systems/caravan/templates/chat/mystique.hbs")
             .withData({
