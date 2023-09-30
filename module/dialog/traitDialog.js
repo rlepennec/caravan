@@ -1,4 +1,4 @@
-export class MystiqueDialog extends FormApplication {
+export class TraitDialog extends FormApplication {
 
     /**
      * Constructor.
@@ -14,9 +14,9 @@ export class MystiqueDialog extends FormApplication {
     static get defaultOptions() {
         return foundry.utils.mergeObject(super.defaultOptions, {
             classes: ["caravan", "sheet"],
-            template: "systems/caravan/templates/dialog/mystique.hbs",
+            template: "systems/caravan/templates/dialog/trait.hbs",
             width: 500,
-            height: 246,
+            height: "auto",
             choices: {},
             allowCustom: true,
             minimum: 0,

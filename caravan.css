@@ -607,6 +607,47 @@
   text-align: justify;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+.mystique-dialog {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  height: 100%;
+}
+.mystique-dialog .right {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.mystique-dialog .right .name {
+  text-align: center;
+  height: 50px;
+  font-size: 30px;
+  padding-top: 10px;
+}
+.mystique-dialog .right .title {
+  text-align: center;
+  font-size: 20px;
+  height: 60px;
+}
+.mystique-dialog .right .jet {
+  display: flex;
+  flex-direction: row;
+}
+.mystique-dialog .right .jet #dice {
+  width: 50%;
+  text-align: center;
+  padding-top: 18px;
+  padding-left: 100px;
+  font-size: 20px;
+  color: #be36ac;
+}
+.mystique-dialog .right .jet .dices {
+  text-align: center;
+  border-radius: 50%;
+  height: 58px;
+  padding: 5px;
+  background-color: #eded89;
+}
 .pnj {
   background-color: white;
   display: flex;

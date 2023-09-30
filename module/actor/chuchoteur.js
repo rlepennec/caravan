@@ -1,5 +1,6 @@
 import { CaravanActorSheet } from "./base.js";
 import { MystiqueDialog } from "../dialog/mystiqueDialog.js";
+import { TraitDialog } from "../dialog/traitDialog.js";
 
 export class ChuchoteurSheet extends CaravanActorSheet {
 
@@ -117,7 +118,7 @@ export class ChuchoteurSheet extends CaravanActorSheet {
      */
     async onRollTrait(event) {
         event.preventDefault();
-        console.log("Roll trait");
+        new TraitDialog(this.actor).render(true);
     }
 
     /**

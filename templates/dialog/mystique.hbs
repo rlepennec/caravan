@@ -1,9 +1,17 @@
-<form class="mystique">
-{{log sentence}}
-{{log .}}
-{{log ..}}
-    <div class="header">
-        <img class="actor" src="{{actor.img}}"/>
+<form class="mystique-dialog">
+
+    <img src="{{actor.img}}"/>
+
+    <div class="right">
+        <label class="name">{{actor.name}}</label>
+        <label class="title">Jet de mystique</label>
+        <div class="jet">
+            <a id="dice"><i class="fas fa-dice-d20"></i></a>
+            <select class="dices" id="dices" name="dices">
+                <option value="1d6">1d6</option>
+                <option value="2d6">2d6</option>
+            </select>
+        </div>
     </div>
 
 </form>
