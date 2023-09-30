@@ -40,7 +40,7 @@ export class PNJSheet extends CaravanActorSheet {
         const sentence = this.sentenceOf(roll.result);
 
         await new Chat(this.object)
-            .withTemplate("systems/caravan/templates/chat/action.hbs")
+            .withTemplate("systems/caravan/templates/chat/trait.hbs")
             .withData({
                 actor: this.actor,
                 result: roll.result,
