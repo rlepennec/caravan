@@ -26,14 +26,14 @@ export class PNJSheet extends CaravanActorSheet {
      */
     activateListeners(html) {
         super.activateListeners(html);
-        html.find('.action .fa-dice').click(this.onRollTrait.bind(this));
+        html.find('.action .fa-dice').click(this.onRollAction.bind(this));
     }
 
     /**
      * Roll the specified item.
      * @param event The click event.
      */
-    async onRollTrait(event) {
+    async onRollAction(event) {
         event.preventDefault();
         new ActionDialog(this.actor).render(true);
     }
