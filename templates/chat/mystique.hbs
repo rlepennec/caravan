@@ -1,20 +1,12 @@
 <form class="mystique-chat">
-{{log .}}
-{{log roll}}
+
     <img src="{{actor.img}}"/>
 
     <div class="right">
-        <label class="sentence">
-        {{#if successful}}
-            {{actor.name}} garde ses points de mystique
-        {{else}}
-            {{actor.name}} perds un point de mystique
-        {{/if}} 
-        </label>
+        <label class="sentence">{{sentence}}</label>
         <div class="result">
             <label class="roll">{{result}}</label>
         </div>
     </div>
-    
 
 </form>

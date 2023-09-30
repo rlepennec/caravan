@@ -62,11 +62,17 @@ export class MystiqueDialog extends FormApplication {
     async onRoll(event) {
         event.preventDefault();
         await this.close();
+        let sentence = this.object.name + " garde ses points de mystique";
+        const mystique = this.object.system.mystique;
         const roll = await new Roll(this.dices + "d6kh").roll({async: true});
-        const successful = roll.result < this.object.system.mystique;
-
-        if (!successful && this.object.system.mystique > 1) {
-            await this.object.update({ ['system.mystique']: this.object.system.mystique - 1 });
+        const successful = roll.result < mystique;
+        
+        if (!successful && mystique > 0) {
+            await this.object.update({ ['system.mystique']: mystique - 1 });
+            if (mystique === 1) {
+                await this.object.update({ ['system.masque']: "" });
+            }
+            sentence = this.object.name + " perds un point de mystique";
         }
 
         await new Chat(this.object)
@@ -74,7 +80,7 @@ export class MystiqueDialog extends FormApplication {
             .withData({
                 actor: this.object,
                 result: roll.result,
-                successful: successful
+                sentence: sentence
             })
             .withRoll(roll)
             .create();
