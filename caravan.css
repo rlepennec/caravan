@@ -1,435 +1,81 @@
-.chuchoteur {
+.action-dialog {
+  display: flex;
+  flex-direction: row;
   background-color: white;
-  display: flex;
-  flex-direction: column;
+  height: 100%;
 }
-.chuchoteur > .header {
-  display: flex;
-  flex-direction: row;
-  height: 235px;
-  margin-top: 10px;
-}
-.chuchoteur > .header .left {
-  display: flex;
-  flex-direction: column;
-  width: 600px;
-  margin-left: 10px;
-}
-.chuchoteur > .header .left .top {
-  display: flex;
-  flex-direction: row;
-}
-.chuchoteur > .header .left .top .surnom {
+.action-dialog .right {
   display: flex;
   flex-direction: column;
   width: 100%;
-  border-radius: 5px;
-  background-color: black;
-  padding: 5px;
-  vertical-align: middle;
+}
+.action-dialog .right .name {
   text-align: center;
+  height: 50px;
+  font-size: 30px;
+  padding-top: 10px;
 }
-.chuchoteur > .header .left .top .surnom label {
-  height: 20px;
-  color: white;
-}
-.chuchoteur > .header .left .top .surnom input {
-  background-color: white;
-}
-.chuchoteur > .header .left .top .age {
-  display: flex;
-  flex-direction: column;
-  margin-left: 20px;
-  width: 50px;
-  border-radius: 5px;
-  background-color: black;
-  padding: 5px;
-  vertical-align: middle;
+.action-dialog .right .title {
   text-align: center;
+  font-size: 20px;
+  height: 60px;
 }
-.chuchoteur > .header .left .top .age label {
-  height: 20px;
-  color: white;
-}
-.chuchoteur > .header .left .top .age input {
-  background-color: white;
-}
-.chuchoteur > .header .left .top .xp {
-  display: flex;
-  flex-direction: column;
-  margin-left: 20px;
-  width: 50px;
-  border-radius: 5px;
-  background-color: black;
-  padding: 5px;
-  vertical-align: middle;
-  text-align: center;
-}
-.chuchoteur > .header .left .top .xp label {
-  height: 20px;
-  color: white;
-}
-.chuchoteur > .header .left .top .xp input {
-  background-color: white;
-}
-.chuchoteur > .header .left .archetype {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  border-radius: 5px;
-  background-color: black;
-  padding: 5px;
-  vertical-align: middle;
-  text-align: center;
-  margin-top: 10px;
-}
-.chuchoteur > .header .left .archetype label {
-  height: 20px;
-  color: white;
-}
-.chuchoteur > .header .left .archetype textarea {
-  overflow: hidden;
-  min-height: 60px;
-  max-height: 60px;
-  min-width: 100%;
-  max-width: 100%;
-  width: 100%;
-  resize: none;
-  vertical-align: middle;
-  text-align: justify;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  background-color: white;
-}
-.chuchoteur > .header .left .middle {
+.action-dialog .right .jet {
   display: flex;
   flex-direction: row;
-  margin-top: 10px;
 }
-.chuchoteur > .header .left .middle .sante {
-  display: flex;
-  flex-direction: row;
-  width: 400px;
-  border-radius: 5px;
-  background-color: black;
-  color: white;
-  padding: 5px;
-  vertical-align: middle;
+.action-dialog .right .jet #dice {
+  width: 50%;
   text-align: center;
-}
-.chuchoteur > .header .left .middle .sante .titre {
-  vertical-align: middle;
-  text-align: center;
-  padding: 10px;
-  height: 100%;
-  width: 120px;
-  padding-top: 20px;
-}
-.chuchoteur > .header .left .middle .sante .enfant {
-  display: flex;
-  flex-direction: column;
-  width: 100px;
-  background-color: black;
-  color: white;
-}
-.chuchoteur > .header .left .middle .sante .enfant label {
-  height: 20px;
-  vertical-align: middle;
-  text-align: center;
-}
-.chuchoteur > .header .left .middle .sante .enfant input {
-  height: 100%;
-  border-radius: 50%;
-  height: 40px;
-  width: 40px;
-  margin-left: 30px;
-  text-align: center;
-  background-color: white;
-  color: black;
-}
-.chuchoteur > .header .left .middle .sante .chuchoteur {
-  display: flex;
-  flex-direction: column;
-  width: 100px;
-  background-color: black;
-  color: white;
-}
-.chuchoteur > .header .left .middle .sante .chuchoteur label {
-  height: 20px;
-  vertical-align: middle;
-  text-align: center;
-}
-.chuchoteur > .header .left .middle .sante .chuchoteur input {
-  height: 100%;
-  border-radius: 50%;
-  height: 40px;
-  width: 40px;
-  margin-left: 30px;
-  text-align: center;
-  background-color: white;
-  color: black;
-}
-.chuchoteur > .header .left .middle .mystique {
-  display: flex;
-  flex-direction: column;
-  margin-left: 20px;
-  width: 150px;
-  border-radius: 5px;
-  background-color: black;
-  padding: 5px;
-  vertical-align: middle;
-  text-align: center;
-}
-.chuchoteur > .header .left .middle .mystique label {
-  height: 20px;
-  color: white;
-}
-.chuchoteur > .header .left .middle .mystique label i {
-  margin-left: 10px;
+  padding-top: 18px;
+  padding-left: 100px;
+  font-size: 20px;
   color: #be36ac;
 }
-.chuchoteur > .header .left .middle .mystique label i:hover {
-  text-shadow: 0px 0px 1px #be36ac;
-}
-.chuchoteur > .header .left .middle .mystique input {
-  background-color: white;
-  margin-left: 33px;
-  border-radius: 50%;
-  height: 40px;
-  width: 40px;
-}
-.chuchoteur > .header .left .middle .monstre {
-  display: flex;
-  flex-direction: column;
-  margin-left: 20px;
-  width: 150px;
-  border-radius: 5px;
-  background-color: black;
-  padding: 5px;
-  vertical-align: middle;
+.action-dialog .right .jet .dices {
   text-align: center;
-}
-.chuchoteur > .header .left .middle .monstre label {
-  height: 20px;
-  color: white;
-}
-.chuchoteur > .header .left .middle .monstre input {
-  background-color: white;
-  margin-left: 33px;
   border-radius: 50%;
-  height: 40px;
-  width: 40px;
+  height: 65px;
+  width: 157px;
+  padding-top: 13px;
+  padding-top: -4px;
+  background-color: #eded89;
 }
-.chuchoteur > .header .right {
+.action-chat {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  height: 100px;
+}
+.action-chat .right {
   display: flex;
   flex-direction: column;
-  margin-left: 10px;
-  margin-right: 10px;
-  height: 236px;
   width: 100%;
-  border-radius: 5px;
-  background-color: black;
-  color: white;
-  padding: 5px;
-  vertical-align: middle;
+}
+.action-chat .right .sentence {
   text-align: center;
+  padding-top: 14px;
 }
-.chuchoteur > .header .right img {
-  max-width: 100%;
-  max-height: 100%;
+.action-chat .right .result {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+.action-chat .right .result .fa-dice {
   padding-top: 5px;
-}
-.chuchoteur > .header .right label {
-  height: 20px;
-  background-color: black;
-  color: white;
-}
-.chuchoteur .traits-masques-equipements {
-  display: flex;
-  flex-direction: row;
-}
-.chuchoteur .traits-masques-equipements .traits-masques {
-  display: flex;
-  flex-direction: column;
-  width: 507px;
-}
-.chuchoteur .traits-masques-equipements .traits-masques .traits {
-  display: flex;
-  flex-direction: column;
-  margin-left: 10px;
-  margin-right: 10px;
-  height: 150px;
-  margin-top: 10px;
-  border: 2px;
-  border-radius: 5px;
-  background-color: black;
-  color: white;
-}
-.chuchoteur .traits-masques-equipements .traits-masques .traits > label {
-  height: 20px;
-  padding-top: 5px;
-  text-align: center;
-}
-.chuchoteur .traits-masques-equipements .traits-masques .traits > label i {
-  margin-left: 10px;
-  color: #be36ac;
-}
-.chuchoteur .traits-masques-equipements .traits-masques .traits > label i:hover {
-  text-shadow: 0px 0px 1px #be36ac;
-}
-.chuchoteur .traits-masques-equipements .traits-masques .traits .liste {
-  display: flex;
-  flex-direction: column;
-  background-color: white;
-  color: black;
-  margin-left: 10px;
-  margin-top: 10px;
-  height: 110px;
-  border-radius: 5px;
-  padding-top: 10px;
-  padding-left: 10px;
-  width: 467px;
-}
-.chuchoteur .traits-masques-equipements .traits-masques .traits .liste .trait {
-  display: flex;
-  flex-direction: row;
-  height: 22px;
-}
-.chuchoteur .traits-masques-equipements .traits-masques .traits .liste .trait i {
-  padding-left: 5px;
-  padding-right: 5px;
-}
-.chuchoteur .traits-masques-equipements .traits-masques .traits .liste .trait:hover {
-  text-shadow: 0px 0px 1px black;
-}
-.chuchoteur .traits-masques-equipements .traits-masques .masques {
-  display: flex;
-  flex-direction: column;
-  margin-left: 10px;
-  margin-right: 10px;
-  height: 330px;
-  margin-top: 10px;
-  border: 2px;
-  border-radius: 5px;
-  background-color: black;
-  color: white;
-}
-.chuchoteur .traits-masques-equipements .traits-masques .masques > label {
-  height: 20px;
-  padding-top: 5px;
-  text-align: center;
-}
-.chuchoteur .traits-masques-equipements .traits-masques .masques .liste {
-  display: flex;
-  flex-direction: column;
-  background-color: white;
-  color: black;
-  margin-left: 10px;
-  margin-top: 10px;
-  height: 290px;
-  width: 467px;
-  border-radius: 5px;
-  padding-top: 10px;
-  padding-left: 10px;
   padding-right: 10px;
+  color: #be36ac;
 }
-.chuchoteur .traits-masques-equipements .traits-masques .masques .liste .header {
-  display: flex;
-  flex-direction: row;
+.action-chat .right .result .roll {
+  font-size: 14px;
+  width: 30px;
   height: 30px;
-  border-bottom-style: dashed;
-  margin-bottom: 15px;
-}
-.chuchoteur .traits-masques-equipements .traits-masques .masques .liste .header .masque {
-  width: 150px;
-  padding-left: 50px;
-}
-.chuchoteur .traits-masques-equipements .traits-masques .masques .liste .header .trait {
-  width: 161px;
-}
-.chuchoteur .traits-masques-equipements .traits-masques .masques .liste .header .voie-1 {
-  width: 52px;
-}
-.chuchoteur .traits-masques-equipements .traits-masques .masques .liste .header .voie-2 {
-  width: 52px;
-}
-.chuchoteur .traits-masques-equipements .traits-masques .masques .liste > .masque {
-  display: flex;
-  flex-direction: row;
-  height: 22px;
-  padding-left: 10px;
-}
-.chuchoteur .traits-masques-equipements .traits-masques .masques .liste > .masque .delete {
-  width: 35px;
-}
-.chuchoteur .traits-masques-equipements .traits-masques .masques .liste > .masque .nom {
-  width: 100px;
-}
-.chuchoteur .traits-masques-equipements .traits-masques .masques .liste > .masque .trait {
-  width: 160px;
-}
-.chuchoteur .traits-masques-equipements .traits-masques .masques .liste > .masque .niveau-1 {
-  width: 50px;
-  text-align: center;
-  border: none;
-  background-color: white;
-  box-shadow: none;
-}
-.chuchoteur .traits-masques-equipements .traits-masques .masques .liste > .masque .niveau-2 {
-  width: 50px;
-  text-align: center;
-  border: none;
-  background-color: white;
-  box-shadow: none;
-}
-.chuchoteur .traits-masques-equipements .traits-masques .masques .liste > .masque .fa-masks-theater {
-  margin-left: 13px;
-  padding-top: 4px;
-}
-.chuchoteur .traits-masques-equipements .traits-masques .masques .liste > .masque:hover {
-  text-shadow: 0px 0px 1px black;
-}
-.chuchoteur .traits-masques-equipements .equipements {
-  display: flex;
-  flex-direction: column;
-  margin-left: 10px;
-  margin-right: 10px;
-  height: 489px;
-  width: 257px;
-  margin-top: 10px;
-  border: 2px;
-  border-radius: 5px;
-  background-color: black;
-  color: white;
-}
-.chuchoteur .traits-masques-equipements .equipements > label {
-  height: 20px;
+  border: solid 1px;
+  border-radius: 50%;
+  background-color: #eded89;
   padding-top: 5px;
   text-align: center;
-}
-.chuchoteur .traits-masques-equipements .equipements .liste {
-  display: flex;
-  flex-direction: column;
-  background-color: white;
-  color: black;
-  margin-left: 10px;
-  margin-top: 10px;
-  height: 449px;
-  border-radius: 5px;
-  padding-top: 10px;
-  padding-left: 10px;
-  width: 237px;
-}
-.chuchoteur .traits-masques-equipements .equipements .liste .equipement {
-  display: flex;
-  flex-direction: row;
-  height: 22px;
-}
-.chuchoteur .traits-masques-equipements .equipements .liste .equipement i {
-  padding-left: 5px;
-  padding-right: 5px;
-}
-.chuchoteur .traits-masques-equipements .equipements .liste .equipement:hover {
-  text-shadow: 0px 0px 1px black;
 }
 .equipement-item {
   background-color: white;

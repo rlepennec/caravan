@@ -1,4 +1,5 @@
 import { CaravanActorSheet } from "./base.js";
+import { ActionDialog } from "../dialog/actionDialog.js";
 
 export class PNJSheet extends CaravanActorSheet {
 
@@ -34,7 +35,7 @@ export class PNJSheet extends CaravanActorSheet {
      */
     async onRollTrait(event) {
         event.preventDefault();
-        console.log("Roll trait");
+        new ActionDialog(this.actor).render(true);
     }
 
 }
