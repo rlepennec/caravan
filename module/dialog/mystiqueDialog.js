@@ -33,8 +33,7 @@ export class MystiqueDialog extends FormApplication {
      */
     getData(options) {
         return Object.create({
-            actor: this.object,
-            sentence: "toto"
+            actor: this.object
         });
     }
 

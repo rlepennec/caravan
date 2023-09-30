@@ -1,7 +1,17 @@
-<form class="mystique">
+<form class="trait-dialog">
 
-    <div class="header">
-        <img class="actor" src="{{actor.img}}"/>
+    <img src="{{actor.img}}"/>
+
+    <div class="right">
+        <label class="name">{{actor.name}}</label>
+        <label class="title">Jet de trait</label>
+        <div class="jet">
+            <a id="dice"><i class="fa-solid fa-dice"></i></a>
+            <div class="dices">
+                <input type="checkbox" id="dices" name="dices" data-dtype="Boolean" />
+                <label>Utiliser un trait</label>
+            </div>
+        </div>
     </div>
 
 </form>
