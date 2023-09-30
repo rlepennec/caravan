@@ -1,3 +1,5 @@
+import { Chat } from "../core/chat.js";
+
 export class MystiqueDialog extends FormApplication {
 
     /**
@@ -6,6 +8,7 @@ export class MystiqueDialog extends FormApplication {
      */
     constructor(actor) {
         super(actor);
+        this.dices = 1;
     }
 
     /**
@@ -33,6 +36,43 @@ export class MystiqueDialog extends FormApplication {
             actor: this.object,
             sentence: "toto"
         });
+    }
+
+    /**
+     * @override
+     */
+    activateListeners(html) {
+        super.activateListeners(html);
+        html.find("#dices").change(this.onSetDices.bind(this));
+        html.find("#dice").click(this.onRoll.bind(this));
+    }
+
+    /**
+     * Handle the dices change.
+     * @param event The event to handle.
+     */
+    async onSetDices(event) {
+        this.dices = parseInt(this.form?.querySelector("#dices")?.value);
+    }
+
+    /**
+     * Handle the click.
+     * @param event The event to handle.
+     */
+    async onRoll(event) {
+        event.preventDefault();
+        await this.close();
+        const roll = await new Roll(this.dices + "d6kh").roll({async: true});
+        const successful = roll.result < this.object.system.mystique;
+
+        await new Chat(this.object)
+            .withTemplate("systems/caravan/templates/chat/mystique.hbs")
+            .withData({
+                actor: this.object,
+            })
+            .withRoll(roll)
+            .create();
+
     }
 
 }
