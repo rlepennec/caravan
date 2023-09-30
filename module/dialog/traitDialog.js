@@ -72,7 +72,7 @@ export class TraitDialog extends FormApplication {
 
         event.preventDefault();
         const roll = await new Roll(this.dices + this.dice + "kh").roll({async: true});
-        const sentence = this.sentenceOf(roll.sentence);
+        const sentence = this.sentenceOf(roll.result);
 
         await new Chat(this.object)
             .withTemplate("systems/caravan/templates/chat/trait.hbs")
@@ -94,17 +94,17 @@ export class TraitDialog extends FormApplication {
      */
     sentenceOf(result) {
         switch (result) {
-            case 1:
+            case "1":
                 return "C'est raté et vous devez payer le prox fort";
-            case 2:
+            case "2":
                 return "C'est raté avec un petit revers";
-            case 3:
+            case "3":
                 return "C'est raté de justesse ou réussi avec revers";
-            case 4:
+            case "4":
                 return "C'est réussi de justesse";
-            case 5:
+            case "5":
                 return "C'est réussi avec un peit effet bénéfique";
-            case 6:
+            case "6":
                 return "C'est réussi brillamment";
                 
         }
