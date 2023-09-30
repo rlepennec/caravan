@@ -669,6 +669,11 @@
   justify-content: center;
   margin-top: 10px;
 }
+.mystique-chat .right .result .fa-dice {
+  padding-top: 5px;
+  padding-right: 10px;
+  color: #be36ac;
+}
 .mystique-chat .right .result .roll {
   font-size: 14px;
   width: 30px;

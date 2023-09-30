@@ -70,7 +70,7 @@
                 </div>
         
                 <div class="mystique">
-                    <label>Mystique<i class="fa-solid fa-dice"></i></label>
+                    <label>Mystique{{#if actor.canUseMystique}}<i class="fa-solid fa-dice"></i>{{/if}}</label>
                     <input
                         name="system.mystique"
                         value="{{data.system.mystique}}"

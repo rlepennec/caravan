@@ -34,4 +34,11 @@ export class CaravanActor extends Actor {
         return this.items.filter(i => i.type === 'equipement');
     }
 
+    /**
+     * @returns true if the chuchoteur have a mask.
+     */
+    get canUseMystique() {
+        return this.system.masque !== "" && this.system.mystique > 0;
+    }
+
 }
