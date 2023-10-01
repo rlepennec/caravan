@@ -1,4 +1,5 @@
 import { Chat } from "../core/chat.js";
+import { Rules } from "../core/rules.js";
 
 export class MystiqueDialog extends FormApplication {
 
@@ -66,19 +67,18 @@ export class MystiqueDialog extends FormApplication {
             return;
         }
 
-        let sentence = null;
+        let sentence = "2";
 
+        // Roll and point lost
         const roll = await new Roll(this.dices + "d6kh").roll({async: true});
         if (roll.result >= this.object.system.mystique && this.object.system.mystique > 0) {
             await this.object.update({ ['system.mystique']: this.object.system.mystique - 1 });
-            if (this.object.system.mystique === 0) {
-                await this.object.update({ ['system.masque']: "" });
-                sentence = "perds son dernier point de mystique et son masque";
-            } else {
-                sentence = "perds un point de mystique";
-            }
-        } else {
-            sentence = "parvient à garder ses points de mystique";
+            sentence = this.object.system.mystique === 0 ? "0" : "1";
+        }
+
+        // Mask lost
+        if (this.object.system.mystique === 0) {
+            await this.object.update({ ['system.masque']: "" });
         }
 
         await new Chat(this.object)
@@ -86,7 +86,7 @@ export class MystiqueDialog extends FormApplication {
             .withData({
                 actor: this.object,
                 result: roll.result,
-                sentence: sentence
+                sentence: Rules.mystiqueSentenceOf(sentence)
             })
             .withRoll(roll)
             .create();

@@ -1,5 +1,6 @@
 import { CaravanActorSheet } from "./base.js";
 import { Chat } from "../core/chat.js";
+import { Rules } from "../core/rules.js";
 
 export class PNJSheet extends CaravanActorSheet {
 
@@ -37,7 +38,7 @@ export class PNJSheet extends CaravanActorSheet {
 
         event.preventDefault();
         const roll = await new Roll(this.actor.system.action + "kh").roll({async: true});
-        const sentence = this.sentenceOf(roll.result);
+        const sentence = Rules.traitSentenceOf(roll.result);
 
         await new Chat(this.object)
             .withTemplate("systems/caravan/templates/chat/trait.hbs")
@@ -49,28 +50,6 @@ export class PNJSheet extends CaravanActorSheet {
             .withRoll(roll)
             .create();
 
-    }
-
-    /**
-     * @param result The roll result between 1 and 6.
-     * @returns the result sentence.
-     */
-    sentenceOf(result) {
-        switch (result) {
-            case "1":
-                return "C'est raté et vous devez payer le prox fort";
-            case "2":
-                return "C'est raté avec un petit revers";
-            case "3":
-                return "C'est raté de justesse ou réussi avec revers";
-            case "4":
-                return "C'est réussi de justesse";
-            case "5":
-                return "C'est réussi avec un peit effet bénéfique";
-            case "6":
-                return "C'est réussi brillamment";
-                
-        }
     }
 
 }

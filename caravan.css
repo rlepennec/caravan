@@ -911,6 +911,14 @@
   background-color: white;
   height: 100%;
 }
+.trait-dialog .left {
+  background-color: black;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+}
 .trait-dialog .right {
   display: flex;
   flex-direction: column;
@@ -935,7 +943,7 @@
   width: 50%;
   text-align: center;
   padding-top: 18px;
-  padding-left: 100px;
+  padding-left: 30px;
   font-size: 20px;
   color: #be36ac;
 }
@@ -947,12 +955,24 @@
   padding-top: 13px;
   padding-top: -4px;
   background-color: #eded89;
+  margin-left: -40px;
+}
+.trait-dialog .right .jet .dices label {
+  padding-top: 2px;
 }
 .trait-chat {
   display: flex;
   flex-direction: row;
   background-color: white;
   height: 100px;
+}
+.trait-chat .left {
+  background-color: black;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
 }
 .trait-chat .right {
   display: flex;
