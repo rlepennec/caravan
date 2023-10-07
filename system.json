@@ -19,6 +19,24 @@
         "caravan.css"
     ],
     "packs": [
+        {
+            "name": "the-caravan-objets",
+            "label": "The caravan - objets",
+            "system": "caravan",
+            "module": "caravan",
+            "path": "./packs/the-caravan-objets.db",
+            "type": "Item",
+            "tags" : [ "item", "the-caravan-objets" ]
+        },
+        {
+            "name": "the-caravan-tables",
+            "label": "The caravan - tables",
+            "system": "caravan",
+            "module": "caravan",
+            "path": "./packs/the-caravan-tables.db",
+            "type": "RollTable",
+            "tags" : [ "item", "the-caravan-tables" ]
+        }
     ],
     "languages": [
         {
