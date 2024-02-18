@@ -28,7 +28,7 @@ jobs:
         download: https://github.com/${{github.repository}}/releases/download/${{github.event.release.tag_name}}/system.zip
 
     # Create a zip file with all files required by the system to add to the release
-    - run: zip -r ./system.zip system.json template.json caravan.js caravan.css assets/ lang/ module/ packs/the-caravan-objets packs/the-caravan-tables/ templates/
+    - run: zip -r ./system.zip system.json template.json caravan.js caravan.css assets/ lang/ module/ packs/the-caravan-objets/ packs/the-caravan-tables/ templates/
 
     # Create a release for this specific version
     - name: Update Release with Files
