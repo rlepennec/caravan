@@ -18,7 +18,7 @@ export class ChuchoteurSheet extends CaravanActorSheet {
      * @override
      */
 	static get defaultOptions() {
-        return mergeObject(super.defaultOptions, {
+        return foundry.utils.mergeObject.mergeObject(super.defaultOptions, {
             width: 800,
             height: 800,
             resizable: false

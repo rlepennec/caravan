@@ -8,7 +8,7 @@ export class PNJSheet extends CaravanActorSheet {
      * @override
      */
 	static get defaultOptions() {
-        return mergeObject(super.defaultOptions, {
+        return foundry.utils.mergeObject(super.defaultOptions, {
             width: 800,
             height: 300,
             resizable: false
