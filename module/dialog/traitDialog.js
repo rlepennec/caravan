@@ -72,7 +72,7 @@ export class TraitDialog extends FormApplication {
     async onRoll(event) {
 
         event.preventDefault();
-        const roll = await new Roll(this.dices + this.dice + "kh").roll({async: true});
+        const roll = await new Roll(this.dices + this.dice + "kh").roll();
         const sentence = Rules.traitSentenceOf(roll.result);
 
         await new Chat(this.object)

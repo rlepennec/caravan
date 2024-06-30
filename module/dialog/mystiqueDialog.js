@@ -70,7 +70,7 @@ export class MystiqueDialog extends FormApplication {
         let sentence = "2";
 
         // Roll and point lost
-        const roll = await new Roll(this.dices + "d6kh").roll({async: true});
+        const roll = await new Roll(this.dices + "d6kh").roll();
         if (roll.result >= this.object.system.mystique && this.object.system.mystique > 0) {
             await this.object.update({ ['system.mystique']: this.object.system.mystique - 1 });
             sentence = this.object.system.mystique === 0 ? "0" : "1";

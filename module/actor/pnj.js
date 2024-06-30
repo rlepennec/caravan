@@ -37,7 +37,7 @@ export class PNJSheet extends CaravanActorSheet {
     async onRollAction(event) {
 
         event.preventDefault();
-        const roll = await new Roll(this.actor.system.action + "kh").roll({async: true});
+        const roll = await new Roll(this.actor.system.action + "kh").roll();
         const sentence = Rules.traitSentenceOf(roll.result);
 
         await new Chat(this.object)

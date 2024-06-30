@@ -94,8 +94,8 @@ export class Chat {
 
         // Set the roll parameter if necessary
         if (this.roll) {
-            data.type = CONST.CHAT_MESSAGE_TYPES.ROLL,
-            data.roll = this.roll;
+            data.rolls = [];
+            data.rolls.push(this.roll);
         }
 
         // Set the flags parameter if necessary
@@ -130,7 +130,7 @@ export class Chat {
     async _createContent() {
 
         // Update the data to provide to the template
-        const data = duplicate(this.data);
+        const data = foundry.utils.duplicate(this.data);
         data.owner = this.actor.id;
 
         // Call the template renderer.
