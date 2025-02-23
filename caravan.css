@@ -966,6 +966,19 @@
 .trait-dialog .right .jet .dices label {
   padding-top: 2px;
 }
+.trait-dialog .right .jet .avantages {
+  text-align: center;
+  border-radius: 50%;
+  height: 65px;
+  width: 157px;
+  padding-top: 13px;
+  padding-top: -4px;
+  background-color: #eded89;
+  margin-left: -40px;
+}
+.trait-dialog .right .jet .avantages label {
+  padding-top: 2px;
+}
 .trait-chat {
   display: flex;
   flex-direction: row;

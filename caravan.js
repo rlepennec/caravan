@@ -23,8 +23,7 @@ Hooks.once("init", function () {
     Items.registerSheet('caravan', TraitSheet, { types: ['trait'], makeDefault: true });
 
     Handlebars.registerHelper({
-        html: HandlebarsHelper.html,
-        enrichHTML: HandlebarsHelper.enrichHTML
+        html: HandlebarsHelper.html
     })
 
 });
