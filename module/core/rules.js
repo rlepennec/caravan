@@ -15,7 +15,7 @@ export class Rules {
             case "4":
                 return "C'est réussi de justesse";
             case "5":
-                return "C'est réussi avec un peit effet bénéfique";
+                return "C'est réussi avec un petit effet bénéfique";
             case "6":
                 return "C'est réussi brillamment";
                 
