@@ -1,3 +1,23 @@
+.application.caravan {
+  --input-height: var(--form-field-height);
+}
+.application.caravan .window-content {
+  padding: 8px;
+  overflow: hidden;
+}
+.application.caravan input[type=text],
+.application.caravan select {
+  padding: 1px 3px;
+  border-radius: 3px;
+}
+.application.caravan textarea {
+  padding: 2px 3px;
+  border-radius: 3px;
+}
+.application.caravan i[data-action],
+.application.caravan label[data-action] {
+  cursor: var(--cursor-pointer);
+}
 .chuchoteur {
   background-color: white;
   display: flex;
@@ -431,12 +451,6 @@
 .chuchoteur .traits-masques-equipements .equipements .liste .equipement:hover {
   text-shadow: 0px 0px 1px black;
 }
-#logo {
-  content: url("../../systems/caravan/assets/logo.webp");
-  width: 92px;
-  height: 92px;
-  border-radius: 3px;
-}
 .equipement-item {
   background-color: white;
   display: flex;
@@ -545,7 +559,8 @@
   height: 175px;
   padding: 10px;
 }
-.masque-item .header .middle .description .editor {
+.masque-item .header .middle .description .editor,
+.masque-item .header .middle .description prose-mirror {
   height: 100%;
 }
 .masque-item .header .middle .trait {
@@ -962,6 +977,7 @@
   padding-top: -4px;
   background-color: #eded89;
   margin-left: -40px;
+  margin-top: -26px;
 }
 .trait-dialog .right .jet .dices label {
   padding-top: 2px;

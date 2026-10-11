@@ -1,11 +1,10 @@
-<form class="{{cssClass}} masque-item" autocomplete="off">
+<div class="masque-item">
 
     <input
-        class="name",
+        class="name"
         name="name"
         type="text"
-        value="{{item.name}}"
-        class="name"/>
+        value="{{item.name}}"/>
 
     <div class="header">
 
@@ -13,19 +12,27 @@
             src="{{item.img}}"
             title="{{item.name}}"
             data-edit="img"
+            data-action="editImage"
             class="left"/>
 
         <div class="middle">
 
             <div class="description">
-                {{editor data.system.description target="system.description" button=true owner=owner editable=editable}}
+                <prose-mirror
+                    name="system.description"
+                    button="true"
+                    editable="{{editable}}"
+                    toggled="false"
+                    value="{{system.description}}">
+                    {{{enrichedDescription}}}
+                </prose-mirror>
             </div>
 
             <div class="trait">
                 <label class="nom">Trait</label>
                 <input
                     name="system.trait"
-                    value="{{data.system.trait}}"
+                    value="{{system.trait}}"
                     type="text"
                     data-dtype="String"
                     class="valeur"/>
@@ -38,6 +45,7 @@
             src="{{item.system.img}}"
             title="{{item.name}}"
             data-edit="system.img"
+            data-action="editImage"
             class="right"/>
 
     </div>
@@ -47,10 +55,10 @@
 
         <input
             name="system.voie.1.nom"
-            value="{{data.system.voie.1.nom}}"
+            value="{{system.voie.1.nom}}"
             type="text"
-            data-dtype="String",
-            placeholder="Voie",
+            data-dtype="String"
+            placeholder="Voie"
             class="nom"/>
 
         <div class="pouvoir">
@@ -61,17 +69,17 @@
 
                 <input
                     name="system.voie.1.pouvoir.1.nom"
-                    value="{{data.system.voie.1.pouvoir.1.nom}}"
+                    value="{{system.voie.1.pouvoir.1.nom}}"
                     type="text"
-                    data-dtype="String",
+                    data-dtype="String"
                     placeholder="Pouvoir"/>
 
             </div>
 
             <textarea
-                class="description",
+                class="description"
                 autocomplete="off"
-                name="system.voie.1.pouvoir.1.description">{{data.system.voie.1.pouvoir.1.description}}</textarea>
+                name="system.voie.1.pouvoir.1.description">{{system.voie.1.pouvoir.1.description}}</textarea>
 
         </div>
 
@@ -83,17 +91,17 @@
 
                 <input
                     name="system.voie.1.pouvoir.2.nom"
-                    value="{{data.system.voie.1.pouvoir.2.nom}}"
+                    value="{{system.voie.1.pouvoir.2.nom}}"
                     type="text"
-                    data-dtype="String",
+                    data-dtype="String"
                     placeholder="Pouvoir"/>
 
             </div>
 
             <textarea
-                class="description",
+                class="description"
                 autocomplete="off"
-                name="system.voie.1.pouvoir.2.description">{{data.system.voie.1.pouvoir.2.description}}</textarea>
+                name="system.voie.1.pouvoir.2.description">{{system.voie.1.pouvoir.2.description}}</textarea>
 
         </div>
 
@@ -105,17 +113,17 @@
 
                 <input
                     name="system.voie.1.pouvoir.3.nom"
-                    value="{{data.system.voie.1.pouvoir.3.nom}}"
+                    value="{{system.voie.1.pouvoir.3.nom}}"
                     type="text"
-                    data-dtype="String",
+                    data-dtype="String"
                     placeholder="Pouvoir"/>
 
             </div>
 
             <textarea
-                class="description",
+                class="description"
                 autocomplete="off"
-                name="system.voie.1.pouvoir.3.description">{{data.system.voie.1.pouvoir.3.description}}</textarea>
+                name="system.voie.1.pouvoir.3.description">{{system.voie.1.pouvoir.3.description}}</textarea>
 
         </div>
 
@@ -125,10 +133,10 @@
 
         <input
             name="system.voie.2.nom"
-            value="{{data.system.voie.2.nom}}"
+            value="{{system.voie.2.nom}}"
             type="text"
-            data-dtype="String",
-            placeholder="Voie",
+            data-dtype="String"
+            placeholder="Voie"
             class="nom"/>
 
         <div class="pouvoir">
@@ -139,17 +147,17 @@
 
                 <input
                     name="system.voie.2.pouvoir.1.nom"
-                    value="{{data.system.voie.2.pouvoir.1.nom}}"
+                    value="{{system.voie.2.pouvoir.1.nom}}"
                     type="text"
-                    data-dtype="String",
+                    data-dtype="String"
                     placeholder="Pouvoir"/>
 
             </div>
 
             <textarea
-                class="description",
+                class="description"
                 autocomplete="off"
-                name="system.voie.2.pouvoir.1.description">{{data.system.voie.2.pouvoir.1.description}}</textarea>
+                name="system.voie.2.pouvoir.1.description">{{system.voie.2.pouvoir.1.description}}</textarea>
 
         </div>
 
@@ -161,17 +169,17 @@
 
                 <input
                     name="system.voie.2.pouvoir.2.nom"
-                    value="{{data.system.voie.2.pouvoir.2.nom}}"
+                    value="{{system.voie.2.pouvoir.2.nom}}"
                     type="text"
-                    data-dtype="String",
+                    data-dtype="String"
                     placeholder="Pouvoir"/>
 
             </div>
 
             <textarea
-                class="description",
+                class="description"
                 autocomplete="off"
-                name="system.voie.2.pouvoir.2.description">{{data.system.voie.2.pouvoir.2.description}}</textarea>
+                name="system.voie.2.pouvoir.2.description">{{system.voie.2.pouvoir.2.description}}</textarea>
 
         </div>
 
@@ -183,20 +191,20 @@
 
                 <input
                     name="system.voie.2.pouvoir.3.nom"
-                    value="{{data.system.voie.2.pouvoir.3.nom}}"
+                    value="{{system.voie.2.pouvoir.3.nom}}"
                     type="text"
-                    data-dtype="String",
+                    data-dtype="String"
                     placeholder="Pouvoir"/>
 
             </div>
 
             <textarea
-                class="description",
+                class="description"
                 autocomplete="off"
-                name="system.voie.2.pouvoir.3.description">{{data.system.voie.2.pouvoir.3.description}}</textarea>
+                name="system.voie.2.pouvoir.3.description">{{system.voie.2.pouvoir.3.description}}</textarea>
 
         </div>
 
     </div>
 
-</form>
+</div>

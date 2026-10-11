@@ -1,84 +1,84 @@
 import { Chat } from "../core/chat.js";
 import { Rules } from "../core/rules.js";
 
-export class TraitDialog extends FormApplication {
+const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
+
+export class TraitDialog extends HandlebarsApplicationMixin(ApplicationV2) {
 
     /**
      * Constructor.
      * @param actor The emiter of the dialog.
      */
     constructor(actor) {
-        super(actor);
-        this.dice = this.object.system.masque === "" ? "d4" : "d6";
-        this.dices = this.defaultDices();
+        super();
+        this.actor = actor;
+        this.dice = this.actor.masque == null ? "d4" : "d6";
     }
 
     /**
-     * @returns the default options to manage the dialog.
+     * @override
      */
-    static get defaultOptions() {
-        return foundry.utils.mergeObject(super.defaultOptions, {
-            classes: ["caravan", "sheet"],
-            template: "systems/caravan/templates/dialog/trait.hbs",
+    static DEFAULT_OPTIONS = {
+        classes: ["caravan", "sheet", "themed", "theme-light"],
+        position: {
             width: 500,
-            height: 246,
-            choices: {},
-            allowCustom: true,
-            minimum: 0,
-            maximum: null,
-            closeOnSubmit: false
-        });
+            height: 246
+        },
+        window: {
+            title: "Jet de trait"
+        },
+        actions: {
+            roll: TraitDialog._onRoll
+        }
+    }
+
+    /**
+     * @override
+     */
+    static PARTS = {
+        main: {
+            template: "systems/caravan/templates/dialog/trait.hbs"
+        }
     }
 
     /**
      * @returns the number of default dices.
      */
     defaultDices() {
-        return this.object.system.masque === "" ? 1 : 2;
+        return this.actor.masque == null ? 1 : 2;
+    }
+
+    /**
+     * @returns the number of dices to roll, one more if a trait is used.
+     */
+    get dices() {
+        const bonus = this.element.querySelector("#dices")?.checked ? 1 : 0;
+        return this.defaultDices() + bonus;
     }
 
     /**
      * @override
      */
-    getData(options) {
-        return Object.create({
-            actor: this.object
-        });
-    }
-
-    /**
-     * @override
-     */
-    activateListeners(html) {
-        super.activateListeners(html);
-        html.find("#dices").change(this.onSetDices.bind(this));
-        html.find("#dice").click(this.onRoll.bind(this));
-    }
-
-    /**
-     * Handle the dices change.
-     * @param event The event to handle.
-     */
-    async onSetDices(event) {
-        const selector = this.form?.querySelector("#dices");
-        const bonus = selector.checked ? 1 : 0;
-        this.dices = this.defaultDices() +  bonus;
+    async _prepareContext(options) {
+        return {
+            actor: this.actor
+        };
     }
 
     /**
      * Handle the click.
      * @param event The event to handle.
      */
-    async onRoll(event) {
+    static async _onRoll(event) {
 
         event.preventDefault();
         const roll = await new Roll(this.dices + this.dice + "kh").roll();
         const sentence = Rules.traitSentenceOf(roll.result);
 
-        await new Chat(this.object)
+        await new Chat(this.actor)
             .withTemplate("systems/caravan/templates/chat/trait.hbs")
             .withData({
-                actor: this.object,
+                actor: this.actor,
                 result: roll.result,
                 sentence: sentence
             })

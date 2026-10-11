@@ -5,12 +5,14 @@ export class CaravanActor extends Actor {
      * @return the image depending on the selected mask.
      */
     get image() {
-        if (this.system.masque === "") {
-            return this.img;
-        } else {
-            const item = this.items.find(i => i.id === this.system.masque);
-            return item.system.img;
-        }
+        return this.masque?.system.img ?? this.img;
+    }
+
+    /**
+     * @returns the selected masque or undefined if none.
+     */
+    get masque() {
+        return this.system.masque === "" ? undefined : this.items.get(this.system.masque);
     }
 
     /**
@@ -38,7 +40,7 @@ export class CaravanActor extends Actor {
      * @returns true if the chuchoteur have a mask.
      */
     get canUseMystique() {
-        return this.system.masque !== "" && this.system.mystique > 0;
+        return this.masque != null && this.system.mystique > 0;
     }
 
 }

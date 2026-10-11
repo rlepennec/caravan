@@ -1,0 +1,28 @@
+// Compatibility layer between the ApplicationV2 windows of Foundry v14 and the v12 rendering.
+// The core styles are declared in cascade layers: these unlayered rules always win over them.
+.application.caravan {
+    --input-height: var(--form-field-height);
+
+    .window-content {
+        padding: 8px;
+        overflow: hidden;
+    }
+
+    input[type=text],
+    select {
+        padding: 1px 3px;
+        border-radius: 3px;
+    }
+
+    textarea {
+        padding: 2px 3px;
+        border-radius: 3px;
+    }
+
+    // The clickable icons of the sheets (dice, trash, masks)
+    i[data-action],
+    label[data-action] {
+        cursor: var(--cursor-pointer);
+    }
+
+}

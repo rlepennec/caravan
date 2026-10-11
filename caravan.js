@@ -12,15 +12,17 @@ Hooks.once("init", function () {
 
     CONFIG.Actor.documentClass = CaravanActor;
     CONFIG.Item.documentClass = CaravanItem;
-    
-    Actors.unregisterSheet("core", ActorSheet);
+
+    const { Actors, Items } = foundry.documents.collections;
+
+    Actors.unregisterSheet("core", foundry.appv1.sheets.ActorSheet);
     Actors.registerSheet("caravan", ChuchoteurSheet, { types: ["chuchoteur"], makeDefault: true, label: "TYPES.Actor.chuchoteur" });
     Actors.registerSheet("caravan", PNJSheet, { types: ["pnj"], makeDefault: true, label: "TYPES.Actor.pnj" });
 
-    Items.unregisterSheet("core", ItemSheet);
-    Items.registerSheet('caravan', EquipementSheet, { types: ['equipement'], makeDefault: true });
-    Items.registerSheet('caravan', MasqueSheet, { types: ['masque'], makeDefault: true });
-    Items.registerSheet('caravan', TraitSheet, { types: ['trait'], makeDefault: true });
+    Items.unregisterSheet("core", foundry.appv1.sheets.ItemSheet);
+    Items.registerSheet('caravan', EquipementSheet, { types: ['equipement'], makeDefault: true, label: "TYPES.Item.equipement" });
+    Items.registerSheet('caravan', MasqueSheet, { types: ['masque'], makeDefault: true, label: "TYPES.Item.masque" });
+    Items.registerSheet('caravan', TraitSheet, { types: ['trait'], makeDefault: true, label: "TYPES.Item.trait" });
 
     Handlebars.registerHelper({
         html: HandlebarsHelper.html

@@ -1,3 +1,6 @@
 less/node_modules
 less/package-lock.json
 
+packs/*/LOCK
+packs/*/LOG
+packs/*/LOG.old

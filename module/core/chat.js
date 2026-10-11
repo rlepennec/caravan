@@ -103,19 +103,8 @@ export class Chat {
             data.flags = this.flags;
         }
 
-        // Set the whisper and blind parameters according to the player roll mode settings
-        switch (game.settings.get('core', 'rollMode')) {
-            case 'gmroll':
-                data.whisper = Chat.getWhisperRecipients('GM').map((u) => u.id);
-                break;
-            case 'blindroll':
-                data.whisper = Chat.getWhisperRecipients('GM').map((u) => u.id);
-                data.blind = true;
-                break;
-            case 'selfroll':
-                data.whisper = [game.user.id];
-                break;
-        }
+        // Set the whisper and blind parameters according to the player message mode settings
+        ChatMessage.applyMode(data);
 
         // Create the chat
         this.chat = await ChatMessage.create(data);
@@ -134,7 +123,7 @@ export class Chat {
         data.owner = this.actor.id;
 
         // Call the template renderer.
-        return await renderTemplate(this.template, data);
+        return await foundry.applications.handlebars.renderTemplate(this.template, data);
 
     }
 

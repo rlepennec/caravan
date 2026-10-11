@@ -1,19 +1,30 @@
-export class CaravanActorSheet extends ActorSheet {
+const { HandlebarsApplicationMixin } = foundry.applications.api;
+
+export class CaravanActorSheet extends HandlebarsApplicationMixin(foundry.applications.sheets.ActorSheetV2) {
 
     /**
-     * @constructor
-     * @param {...any} args
+     * The light theme is forced to keep the rendering of the v12 sheets.
+     * @override
      */
-    constructor(...args) {
-        super(...args);
-        this.options.submitOnClose = true;
+    static DEFAULT_OPTIONS = {
+        classes: ["caravan", "themed", "theme-light"],
+        form: {
+            submitOnChange: true,
+            closeOnSubmit: false
+        },
+        window: {
+            resizable: false
+        }
     }
 
     /**
      * @override
      */
-    getData() {
-       return super.getData();
+    async _prepareContext(options) {
+        const context = await super._prepareContext(options);
+        context.actor = this.actor;
+        context.system = this.actor.system;
+        return context;
     }
 
 }

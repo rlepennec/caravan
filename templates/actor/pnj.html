@@ -1,4 +1,4 @@
-<form class="{{cssClass}} pnj" autocomplete="off">
+<div class="pnj">
 
     <div class="left">
 
@@ -14,10 +14,10 @@
             </div>
 
             <div class="action">
-                <label>Action<i class="fa-solid fa-dice"></i></label>
+                <label>Action<i class="fa-solid fa-dice" data-action="rollAction"></i></label>
                 <input
                     name="system.action"
-                    value="{{data.system.action}}"
+                    value="{{system.action}}"
                     type="text"
                     pattern="[0-9]+d[0-9]+"
                     required
@@ -28,7 +28,7 @@
                 <label>Vie</label>
                 <input
                     name="system.vie"
-                    value="{{data.system.vie}}"
+                    value="{{system.vie}}"
                     type="text"
                     required
                     data-dtype="Number"/>
@@ -38,7 +38,7 @@
                 <label>Attaque</label>
                 <input
                     name="system.attaque"
-                    value="{{data.system.attaque}}"
+                    value="{{system.attaque}}"
                     type="text"
                     required
                     data-dtype="Number"/>
@@ -49,9 +49,9 @@
         <div class="description">
             <label>Description</label>
             <textarea
-                class="bottom",
+                class="bottom"
                 autocomplete="off"
-                name="system.description">{{data.system.description}}</textarea>
+                name="system.description">{{system.description}}</textarea>
         </div>
 
     </div>
@@ -61,7 +61,8 @@
         <img
             src="{{actor.img}}"
             title="{{actor.name}}"
-            data-edit="img"/>
+            data-edit="img"
+            data-action="editImage"/>
     </div>
 
-</form>
+</div>

@@ -1,4 +1,4 @@
-<form class="{{cssClass}} trait-item" autocomplete="off">
+<div class="trait-item">
 
     <div class="left">
 
@@ -14,9 +14,9 @@
         <div class="description">
             <label>Description</label>
             <textarea
-                class="bottom",
+                class="bottom"
                 autocomplete="off"
-                name="system.description">{{data.system.description}}</textarea>
+                name="system.description">{{system.description}}</textarea>
         </div>
 
     </div>
@@ -26,7 +26,8 @@
         <img
             src="{{item.img}}"
             title="{{item.name}}"
-            data-edit="img"/>
+            data-edit="img"
+            data-action="editImage"/>
     </div>
 
-</form>
+</div>

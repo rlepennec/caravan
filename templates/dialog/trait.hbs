@@ -1,4 +1,4 @@
-<form class="trait-dialog">
+<div class="trait-dialog">
 
     <div class="left">
         <img src="{{actor.img}}" />
@@ -8,7 +8,7 @@
         <label class="name">{{actor.name}}</label>
         <label class="title">Jet de trait</label>
         <div class="jet">
-            <a id="dice"><i class="fa-solid fa-dice"></i></a>
+            <a id="dice" data-action="roll"><i class="fa-solid fa-dice"></i></a>
             <div class="dices">
                 <input type="checkbox" id="dices" name="dices" data-dtype="Boolean" />
                 <label>Utiliser un trait</label>
@@ -22,4 +22,4 @@
         </div>
     </div>
 
-</form>
+</div>

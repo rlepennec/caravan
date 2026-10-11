@@ -5,118 +5,112 @@ import { TraitDialog } from "../dialog/traitDialog.js";
 export class ChuchoteurSheet extends CaravanActorSheet {
 
     /**
-     * @constructor
-     * @param  {...any} args
-     */
-    constructor(...args) {
-        super(...args);
-        this.image = this.actor.img;
-        this.options.submitOnClose = false;
-    }
-
-    /** 
      * @override
      */
-	static get defaultOptions() {
-        return foundry.utils.mergeObject(super.defaultOptions, {
+    static DEFAULT_OPTIONS = {
+        position: {
             width: 800,
-            height: 800,
-            resizable: false
-      });
+            height: 800
+        },
+        actions: {
+            deleteItem: ChuchoteurSheet._onDeleteItem,
+            openItem: ChuchoteurSheet._onOpenItem,
+            selectMasque: ChuchoteurSheet._onSelectMasque,
+            rollTrait: ChuchoteurSheet._onRollTrait,
+            rollMystique: ChuchoteurSheet._onRollMystique
+        }
     }
 
     /**
      * @override
      */
-    _updateObject(event, formData) {
-        formData["img"] = this.actor.img;
-        super._updateObject(event, formData);
-        this.render(true);
+    static PARTS = {
+        main: {
+            template: 'systems/caravan/templates/actor/chuchoteur.html'
+        }
     }
 
     /**
-     * @return the path of the specified actor sheet.
-     */
-    get template() {
-        return 'systems/caravan/templates/actor/chuchoteur.html';
-    }
-
-    /**
+     * The voie levels are not part of the actor form: they are saved on their masque.
      * @override
      */
-    activateListeners(html) {
-        super.activateListeners(html);
-        html.find('.trait .delete').click(this.onDeleteItem.bind(this, 'trait'));
-        html.find('.trait .open').click(this.onOpenItem.bind(this, 'trait'));
-        html.find('.traits .fa-dice').click(this.onRollTrait.bind(this));
-        html.find('.mystique .fa-dice').click(this.onRollMystique.bind(this));
-        html.find('.equipement .delete').click(this.onDeleteItem.bind(this, 'equipement'));
-        html.find('.equipement .open').click(this.onOpenItem.bind(this, 'equipement'));
-        html.find('.masque .delete').click(this.onDeleteItem.bind(this, 'masque'));
-        html.find('.masque .voie').change(this.onSetVoie.bind(this));
-        html.find('.masque .open').click(this.onOpenItem.bind(this, 'masque'));
-        html.find('.masque .fa-masks-theater').click(this.onSelectMasque.bind(this));
+    async _onRender(context, options) {
+        await super._onRender(context, options);
+        for (const input of this.element.querySelectorAll('.masque input[data-voie]')) {
+            input.addEventListener('change', this._onSetVoie.bind(this));
+        }
     }
 
     /**
-     * Delete the specified item.
-     * @param type  The type of item.
-     * @param event The click event.
+     * @param target The clicked element.
+     * @returns the embedded item of the row containing the target.
      */
-    async onDeleteItem(type, event) {
+    _itemOf(target) {
+        const id = target.closest("[data-id]")?.dataset.id;
+        return this.actor.items.get(id);
+    }
+
+    /**
+     * Delete the specified item. The active masque is unselected first.
+     * @param event  The click event.
+     * @param target The clicked element.
+     */
+    static async _onDeleteItem(event, target) {
         event.preventDefault();
-        const id = $(event.currentTarget).closest("." + type).data("id");
-        const item = this.actor.items.get(id);
+        const item = this._itemOf(target);
+        if (item == null) {
+            return;
+        }
+        if (this.actor.system.masque === item.id) {
+            await this.actor.update({ ['system.masque']: "" });
+        }
         await this.actor.deleteEmbeddedDocuments('Item', [item.id]);
     }
 
     /**
      * Open the specified item.
-     * @param type  The type of the item.
-     * @param event The click event.
+     * @param event  The click event.
+     * @param target The clicked element.
      */
-    async onOpenItem(type, event) {
+    static async _onOpenItem(event, target) {
         event.preventDefault();
-        const id = $(event.currentTarget).closest("." + type).data("id");
-        const item = this.actor.items.get(id);
-        if (item != null) {
-            item.sheet.render(true);
-        }
+        this._itemOf(target)?.sheet.render(true);
     }
 
     /**
-     * Set the specified voie.
-     * @param event The click event.
+     * Set the level of the specified voie.
+     * @param event The change event.
      */
-    async onSetVoie(event) {
+    async _onSetVoie(event) {
         event.preventDefault();
-        const id = $(event.currentTarget).closest(".masque").data("id");
-        const voie = $(event.currentTarget).closest(".voie").data("voie");
-        const item = this.actor.items.get(id);
-        const value = $(event.currentTarget).closest(".voie").val();
-        await item.update({ ['system.voie.' + voie + '.niveau']: parseInt(value) });
+        event.stopPropagation();
+        const input = event.currentTarget;
+        const item = this._itemOf(input);
+        const value = parseInt(input.value);
+        if (item == null || isNaN(value)) {
+            return;
+        }
+        await item.update({ ['system.voie.' + input.dataset.voie + '.niveau']: value });
     }
 
     /**
      * Select the specified masque.
-     * @param event The click event.
-     * @returns the instance.
+     * @param event  The click event.
+     * @param target The clicked element.
      */
-    async onSelectMasque(event) {
+    static async _onSelectMasque(event, target) {
         event.preventDefault();
-        const id = $(event.currentTarget).closest(".masque").data("id");
-        const item = this.actor.items.get(id);
+        const item = this._itemOf(target);
         if (item != null) {
             await this.actor.update({ ['system.masque']: (this.actor.system.masque === item.id ? "" : item.id) });
         }
-        return this;
     }
 
     /**
-     * Roll the specified trait.
+     * Roll a trait.
      * @param event The click event.
      */
-    async onRollTrait(event) {
+    static async _onRollTrait(event) {
         event.preventDefault();
         new TraitDialog(this.actor).render(true);
     }
@@ -125,7 +119,7 @@ export class ChuchoteurSheet extends CaravanActorSheet {
      * Roll the mystique level.
      * @param event The click event.
      */
-    async onRollMystique(event) {
+    static async _onRollMystique(event) {
         event.preventDefault();
         new MystiqueDialog(this.actor).render(true);
     }

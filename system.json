@@ -2,15 +2,15 @@
     "id":"caravan",
     "title": "The Caravan",
     "description": "A system for playing The Caravan game.",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "authors": [
         {
             "name": "Kartaj"
         }
     ],
     "compatibility": {
-        "minimum": "13",
-        "verified": "13"
+        "minimum": "14",
+        "verified": "14"
     },
     "esmodules": [
         "caravan.js"
@@ -23,8 +23,7 @@
             "name": "the-caravan-objets",
             "label": "The caravan - objets",
             "system": "caravan",
-            "module": "caravan",
-            "path": "./packs/the-caravan-objets.db",
+            "path": "packs/the-caravan-objets",
             "type": "Item",
             "tags" : [ "item", "the-caravan-objets" ]
         },
@@ -32,8 +31,7 @@
             "name": "the-caravan-tables",
             "label": "The caravan - tables",
             "system": "caravan",
-            "module": "caravan",
-            "path": "./packs/the-caravan-tables.db",
+            "path": "packs/the-caravan-tables",
             "type": "RollTable",
             "tags" : [ "item", "the-caravan-tables" ]
         }
@@ -54,6 +52,6 @@
     "socket": true,
     "url": "https://github.com/rlepennec/caravan",
     "manifest": "https://github.com/rlepennec/caravan/releases/latest/download/system.json",
-    "download": "https://github.com/rlepennec/caravan/releases/download/v1.0.3/system.zip",
+    "download": "https://github.com/rlepennec/caravan/releases/download/v1.2.0/system.zip",
     "license": "license.txt"
 }

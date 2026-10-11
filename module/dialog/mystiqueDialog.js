@@ -1,69 +1,70 @@
 import { Chat } from "../core/chat.js";
 import { Rules } from "../core/rules.js";
 
-export class MystiqueDialog extends FormApplication {
+const { ApplicationV2, HandlebarsApplicationMixin } = foundry.applications.api;
+
+export class MystiqueDialog extends HandlebarsApplicationMixin(ApplicationV2) {
 
     /**
      * Constructor.
      * @param actor The emiter of the dialog.
      */
     constructor(actor) {
-        super(actor);
-        this.dices = 1;
+        super();
+        this.actor = actor;
     }
 
     /**
-     * @returns the default options to manage the dialog.
+     * @override
      */
-    static get defaultOptions() {
-        return foundry.utils.mergeObject(super.defaultOptions, {
-            classes: ["caravan", "sheet"],
-            template: "systems/caravan/templates/dialog/mystique.hbs",
+    static DEFAULT_OPTIONS = {
+        classes: ["caravan", "sheet", "themed", "theme-light"],
+        position: {
             width: 500,
-            height: 246,
-            choices: {},
-            allowCustom: true,
-            minimum: 0,
-            maximum: null,
-            closeOnSubmit: false
-        });
+            height: 246
+        },
+        window: {
+            title: "Jet de mystique"
+        },
+        actions: {
+            roll: MystiqueDialog._onRoll
+        }
     }
 
     /**
      * @override
      */
-    getData(options) {
-        return Object.create({
-            actor: this.object
-        });
+    static PARTS = {
+        main: {
+            template: "systems/caravan/templates/dialog/mystique.hbs"
+        }
+    }
+
+    /**
+     * @returns the number of dices to roll.
+     */
+    get dices() {
+        return parseInt(this.element.querySelector("#dices")?.value ?? 1);
     }
 
     /**
      * @override
      */
-    activateListeners(html) {
-        super.activateListeners(html);
-        html.find("#dices").change(this.onSetDices.bind(this));
-        html.find("#dice").click(this.onRoll.bind(this));
-    }
-
-    /**
-     * Handle the dices change.
-     * @param event The event to handle.
-     */
-    async onSetDices(event) {
-        this.dices = parseInt(this.form?.querySelector("#dices")?.value);
+    async _prepareContext(options) {
+        return {
+            actor: this.actor
+        };
     }
 
     /**
      * Handle the click.
      * @param event The event to handle.
      */
-    async onRoll(event) {
+    static async _onRoll(event) {
 
         event.preventDefault();
 
-        if (this.object.system.masque == "") {
+        if (this.actor.masque == null) {
             return;
         }
 
@@ -71,20 +72,20 @@ export class MystiqueDialog extends FormApplication {
 
         // Roll and point lost
         const roll = await new Roll(this.dices + "d6kh").roll();
-        if (roll.result >= this.object.system.mystique && this.object.system.mystique > 0) {
-            await this.object.update({ ['system.mystique']: this.object.system.mystique - 1 });
-            sentence = this.object.system.mystique === 0 ? "0" : "1";
+        if (roll.total >= this.actor.system.mystique && this.actor.system.mystique > 0) {
+            await this.actor.update({ ['system.mystique']: this.actor.system.mystique - 1 });
+            sentence = this.actor.system.mystique === 0 ? "0" : "1";
         }
 
         // Mask lost
-        if (this.object.system.mystique === 0) {
-            await this.object.update({ ['system.masque']: "" });
+        if (this.actor.system.mystique === 0) {
+            await this.actor.update({ ['system.masque']: "" });
         }
 
-        await new Chat(this.object)
+        await new Chat(this.actor)
             .withTemplate("systems/caravan/templates/chat/mystique.hbs")
             .withData({
-                actor: this.object,
+                actor: this.actor,
                 result: roll.result,
                 sentence: Rules.mystiqueSentenceOf(sentence)
             })

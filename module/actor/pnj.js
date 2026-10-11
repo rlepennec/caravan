@@ -4,43 +4,39 @@ import { Rules } from "../core/rules.js";
 
 export class PNJSheet extends CaravanActorSheet {
 
-    /** 
+    /**
      * @override
      */
-	static get defaultOptions() {
-        return foundry.utils.mergeObject(super.defaultOptions, {
+    static DEFAULT_OPTIONS = {
+        position: {
             width: 800,
-            height: 300,
-            resizable: false
-      });
-    }
-
-    /**
-     * @return the path of the specified actor sheet.
-     */
-    get template() {
-        return 'systems/caravan/templates/actor/pnj.html';
+            height: 300
+        },
+        actions: {
+            rollAction: PNJSheet._onRollAction
+        }
     }
 
     /**
      * @override
      */
-    activateListeners(html) {
-        super.activateListeners(html);
-        html.find('.action .fa-dice').click(this.onRollAction.bind(this));
+    static PARTS = {
+        main: {
+            template: 'systems/caravan/templates/actor/pnj.html'
+        }
     }
 
     /**
-     * Roll the specified item.
+     * Roll the action of the pnj.
      * @param event The click event.
      */
-    async onRollAction(event) {
+    static async _onRollAction(event) {
 
         event.preventDefault();
         const roll = await new Roll(this.actor.system.action + "kh").roll();
         const sentence = Rules.traitSentenceOf(roll.result);
 
-        await new Chat(this.object)
+        await new Chat(this.actor)
             .withTemplate("systems/caravan/templates/chat/trait.hbs")
             .withData({
                 actor: this.actor,
