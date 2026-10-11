@@ -960,18 +960,20 @@
   height: 60px;
 }
 .trait-dialog .right .jet {
-  display: flex;
-  flex-direction: row;
+  position: relative;
+  height: 85px;
 }
 .trait-dialog .right .jet #dice {
-  width: 50%;
-  text-align: center;
-  padding-top: 18px;
-  padding-left: 30px;
+  position: absolute;
+  top: 18px;
+  left: calc(50% - 103px - 30px);
   font-size: 20px;
   color: #be36ac;
 }
 .trait-dialog .right .jet .dices {
+  position: absolute;
+  top: -26px;
+  left: calc(50% - 103px);
   text-align: center;
   border-radius: 50%;
   height: 65px;
@@ -979,13 +981,14 @@
   padding-top: 13px;
   padding-top: -4px;
   background-color: #eded89;
-  margin-left: -40px;
-  margin-top: -26px;
 }
 .trait-dialog .right .jet .dices label {
   padding-top: 2px;
 }
 .trait-dialog .right .jet .avantages {
+  position: absolute;
+  top: 20px;
+  left: calc(50% - 54px);
   text-align: center;
   border-radius: 50%;
   height: 65px;
@@ -993,7 +996,6 @@
   padding-top: 13px;
   padding-top: -4px;
   background-color: #eded89;
-  margin-left: -40px;
 }
 .trait-dialog .right .jet .avantages label {
   padding-top: 2px;

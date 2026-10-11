@@ -22,7 +22,7 @@ export class TraitDialog extends HandlebarsApplicationMixin(ApplicationV2) {
         classes: ["caravan", "sheet", "themed", "theme-light"],
         position: {
             width: 500,
-            height: 246
+            height: 280
         },
         window: {
             title: "Jet de trait"
@@ -49,11 +49,12 @@ export class TraitDialog extends HandlebarsApplicationMixin(ApplicationV2) {
     }
 
     /**
-     * @returns the number of dices to roll, one more if a trait is used.
+     * @returns the number of dices to roll, one more if a trait is used and one more if advantaged.
      */
     get dices() {
-        const bonus = this.element.querySelector("#dices")?.checked ? 1 : 0;
-        return this.defaultDices() + bonus;
+        const trait = this.element.querySelector("#dices")?.checked ? 1 : 0;
+        const avantage = this.element.querySelector("#avantages")?.checked ? 1 : 0;
+        return this.defaultDices() + trait + avantage;
     }
 
     /**
