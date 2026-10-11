@@ -73,6 +73,7 @@
 }
 .chuchoteur > .header .left .top .age input {
   background-color: white;
+  text-align: center;
 }
 .chuchoteur > .header .left .top .xp {
   display: flex;
@@ -91,6 +92,7 @@
 }
 .chuchoteur > .header .left .top .xp input {
   background-color: white;
+  text-align: center;
 }
 .chuchoteur > .header .left .archetype {
   height: 100%;
@@ -213,6 +215,7 @@
 .chuchoteur > .header .left .middle .mystique input {
   background-color: white;
   margin-left: 33px;
+  text-align: center;
   border-radius: 50%;
   height: 40px;
   width: 40px;
@@ -235,6 +238,7 @@
 .chuchoteur > .header .left .middle .monstre input {
   background-color: white;
   margin-left: 33px;
+  text-align: center;
   border-radius: 50%;
   height: 40px;
   width: 40px;
@@ -313,10 +317,10 @@
   display: flex;
   flex-direction: row;
   height: 22px;
+  padding-left: 10px;
 }
 .chuchoteur .traits-masques-equipements .traits-masques .traits .liste .trait i {
-  padding-left: 5px;
-  padding-right: 5px;
+  width: 35px;
 }
 .chuchoteur .traits-masques-equipements .traits-masques .traits .liste .trait:hover {
   text-shadow: 0px 0px 1px black;
@@ -445,8 +449,7 @@
   height: 22px;
 }
 .chuchoteur .traits-masques-equipements .equipements .liste .equipement i {
-  padding-left: 5px;
-  padding-right: 5px;
+  width: 35px;
 }
 .chuchoteur .traits-masques-equipements .equipements .liste .equipement:hover {
   text-shadow: 0px 0px 1px black;
